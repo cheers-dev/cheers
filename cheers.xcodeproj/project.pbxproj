@@ -21,6 +21,7 @@
 		F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */; };
 		F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatsView.swift */; };
 		F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* Chats.swift */; };
+		F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
 		F55ED6512BA8B97800D715C8 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		F55ED6532BA8B98100D715C8 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
+		F55ED6552BA8C08000D715C8 /* ChatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +192,9 @@
 		F55ED6502BA8B96B00D715C8 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED6512BA8B97800D715C8 /* ChatsView.swift */,
 				F55ED6532BA8B98100D715C8 /* Chats.swift */,
+				F55ED6512BA8B97800D715C8 /* ChatsView.swift */,
+				F55ED6552BA8C08000D715C8 /* ChatCardView.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
+				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
