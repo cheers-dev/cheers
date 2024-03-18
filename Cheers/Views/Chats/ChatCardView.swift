@@ -1,0 +1,56 @@
+//
+//  ChatCardView.swift
+//  cheers
+//
+//  Created by Dong on 2024/3/19.
+//
+
+import SwiftUI
+
+struct ChatCardView: View {
+    let imageURL: URL?
+    let name: String
+    var lastMessage: String
+    var time: Date
+    
+    var body: some View {
+        HStack(spacing: 12) {
+            AsyncImage(url: imageURL) { res in
+                switch res {
+                    case .success(let image):
+                        image
+                            .resizable()
+                    default:
+                        Image("icon")
+                            .resizable()
+                            .padding(4)
+                            .background(Color(UIColor.systemGray5))
+                }
+            }
+            .frame(width: 50, height: 50)
+            .clipShape(Circle())
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(name)
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Text(time.formatted(date: .omitted, time: .shortened))
+                        .font(.footnote)
+                }
+                Text(lastMessage)
+                    .font(.callout)
+                    .foregroundStyle(.gray)
+            }
+        }
+    }
+}
+
+#Preview {
+    ChatCardView(
+        imageURL: URL(string: ""),
+        name: "Name",
+        lastMessage: "testing message",
+        time: Date()
+    )
+}

@@ -19,6 +19,8 @@
 		F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6492BA8A08F00D715C8 /* Register.swift */; };
 		F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */; };
 		F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */; };
+		F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatsView.swift */; };
+		F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* Chats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		F55ED6492BA8A08F00D715C8 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
+		F55ED6512BA8B97800D715C8 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		F55ED6532BA8B98100D715C8 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 		F55ED6422BA8980900D715C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F55ED6502BA8B96B00D715C8 /* Chats */,
 				F55ED6482BA8A07E00D715C8 /* Register */,
 				F55ED6432BA8985E00D715C8 /* Login */,
 			);
@@ -180,6 +185,15 @@
 				F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F55ED6502BA8B96B00D715C8 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6512BA8B97800D715C8 /* ChatsView.swift */,
+				F55ED6532BA8B98100D715C8 /* Chats.swift */,
+			);
+			path = Chats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
@@ -319,6 +334,7 @@
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
+				F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
