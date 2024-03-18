@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  cheers
+//  Cheers
 //
 //  Created by Dong on 2024/3/18.
 //
@@ -22,14 +22,8 @@ struct LoginView: View {
                 .fontWeight(.semibold)
             Spacer()
             VStack(spacing: 20) {
-                TextField("信箱", text: $mail)
-                    .padding(12)
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(12)
-                SecureField("密碼", text: $password)
-                    .padding(12)
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(12)
+                GrayTextField("信箱", text: $mail)
+                GrayTextField("密碼", type: .password, text: $password)
                 Button(action: {}) {
                     Text("登入")
                         .padding(12)
@@ -46,9 +40,10 @@ struct LoginView: View {
             Spacer()
             HStack {
                 Text("還沒有帳號嗎？")
+                    .foregroundStyle(.gray)
                 Button(action: {}) {
                     Text("註冊")
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.black)
                 }
             }
         }

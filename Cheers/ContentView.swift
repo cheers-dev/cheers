@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  cheers
+//  Cheers
 //
 //  Created by Dong on 2024/3/18.
 //

@@ -1,13 +1,13 @@
 //
-//  cheersUITestsLaunchTests.swift
-//  cheersUITests
+//  CheersUITestsLaunchTests.swift
+//  CheersUITests
 //
 //  Created by Dong on 2024/3/18.
 //
 
 import XCTest
 
-final class cheersUITestsLaunchTests: XCTestCase {
+final class CheersUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

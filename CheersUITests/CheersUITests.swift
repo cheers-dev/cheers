@@ -1,13 +1,13 @@
 //
-//  cheersUITests.swift
-//  cheersUITests
+//  CheersUITests.swift
+//  CheersUITests
 //
 //  Created by Dong on 2024/3/18.
 //
 
 import XCTest
 
-final class cheersUITests: XCTestCase {
+final class CheersUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
