@@ -22,6 +22,8 @@
 		F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatsView.swift */; };
 		F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* Chats.swift */; };
 		F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatCardView.swift */; };
+		F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */; };
+		F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		F55ED6512BA8B97800D715C8 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
 		F55ED6532BA8B98100D715C8 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
 		F55ED6552BA8C08000D715C8 /* ChatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCardView.swift; sourceTree = "<group>"; };
+		F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
+		F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 		F55ED6422BA8980900D715C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F55ED6572BA8CC7800D715C8 /* Chatroom */,
 				F55ED6502BA8B96B00D715C8 /* Chats */,
 				F55ED6482BA8A07E00D715C8 /* Register */,
 				F55ED6432BA8985E00D715C8 /* Login */,
@@ -197,6 +202,15 @@
 				F55ED6552BA8C08000D715C8 /* ChatCardView.swift */,
 			);
 			path = Chats;
+			sourceTree = "<group>";
+		};
+		F55ED6572BA8CC7800D715C8 /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */,
+				F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */,
+			);
+			path = Chatroom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +345,8 @@
 			files = (
 				F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
+				F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */,
+				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
