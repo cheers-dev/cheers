@@ -56,43 +56,31 @@ struct UserProfileView: View {
                 
                 VStack(alignment: .leading, spacing: 20) {
                     NavigationLink(destination: Text("美食世界盃")) {
-                        HStack {
-                            Image(systemName: "person.2.fill")
-                                .font(.title2)
-                            Text("美食世界盃")
-                            Spacer()
-                            Image(systemName: "chevron.forward")
-                        }
+                        NavigationButtonLabel(
+                            systemName: "person.2.fill",
+                            label: "美食世界盃"
+                        )
                     }
                     Divider()
                     NavigationLink(destination: Text("好友分析")) {
-                        HStack {
-                            Image(systemName: "text.magnifyingglass.rtl")
-                                .font(.title2)
-                            Text("好友分析")
-                            Spacer()
-                            Image(systemName: "chevron.forward")
-                        }
+                        NavigationButtonLabel(
+                            systemName: "text.magnifyingglass.rtl",
+                            label: "好友分析"
+                        )
                     }
                     Divider()
                     NavigationLink(destination: Text("美食盛典")) {
-                        HStack {
-                            Image(systemName: "takeoutbag.and.cup.and.straw.fill")
-                                .font(.title2)
-                            Text("美食盛典")
-                            Spacer()
-                            Image(systemName: "chevron.forward")
-                        }
+                        NavigationButtonLabel(
+                            systemName: "takeoutbag.and.cup.and.straw.fill",
+                            label: "美食盛典"
+                        )
                     }
                     Divider()
                     NavigationLink(destination: Text("收藏口袋")) {
-                        HStack {
-                            Image(systemName: "heart.fill")
-                                .font(.title2)
-                            Text("收藏口袋")
-                            Spacer()
-                            Image(systemName: "chevron.forward")
-                        }
+                        NavigationButtonLabel(
+                            systemName: "heart.fill",
+                            label: "收藏口袋"
+                        )
                     }
                 }
                 .foregroundStyle(.black)

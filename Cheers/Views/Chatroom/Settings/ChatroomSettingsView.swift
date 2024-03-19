@@ -46,30 +46,27 @@ struct ChatroomSettingsView: View {
 
             VStack(alignment: .leading, spacing: 20) {
                 Button(action: {}) {
-                    HStack {
-                        Label("更改群組名稱", systemImage: "pencil.line")
-                        Spacer()
-                        Image(systemName: "chevron.forward")
-                            .font(.footnote)
-                    }
+                    NavigationButtonLabel(
+                        systemName: "pencil.line",
+                        label: "更改群組名稱"
+                    )
                 }
                 
                 Divider()
                 
                 Button(action: {}) {
-                    Label("更改群組頭貼", systemImage: "photo")
-                    Spacer()
-                    Image(systemName: "chevron.forward")
-                        .font(.footnote)
+                    NavigationButtonLabel(
+                        systemName: "photo",
+                        label: "更改群組頭貼"
+                    )
                 }
                 
                 Divider()
                 
                 Button(action: {}) {
-                    Label("刪除群組", systemImage: "trash.fill")
-                    Spacer()
-                    Image(systemName: "chevron.forward")
-                        .font(.footnote)
+                    NavigationButtonLabel(
+                        systemName: "trash.fill",
+                        label: "刪除群組")
                 }
                 .foregroundStyle(.red)
             }
