@@ -13,7 +13,7 @@ struct ChatsView: View {
         NavigationStack {
             List {
                 NavigationLink {
-                    Text("chatting room page")
+                    ChatroomView()
                 } label: {
                     ChatCardView(
                         imageURL: URL(string: ""),
