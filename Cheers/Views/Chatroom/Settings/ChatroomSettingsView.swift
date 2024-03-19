@@ -78,10 +78,7 @@ struct ChatroomSettingsView: View {
         }
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Button(action: { dismiss() }) {
-                    Image(systemName: "chevron.backward")
-                        .foregroundStyle(.gray)
-                }
+                DismissButton()
             }
             
             ToolbarItem(placement: .principal) {

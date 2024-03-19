@@ -15,14 +15,11 @@ struct ChatroomView: View {
     var body: some View {
         NavigationStack {
             HStack {
-                Button(action: {dismiss()}) {
-                    Image(systemName: "chevron.backward")
-                        .foregroundStyle(.gray)
-                }
+                DismissButton()
                 Text("Chatroom name")
                     .font(.title3)
                 Spacer()
-                NavigationLink(destination: Text("more page")) {
+                NavigationLink(destination: ChatroomSettingsView()) {
                     Image(systemName: "line.horizontal.3")
                         .font(.title3)
                         .foregroundStyle(.black)
@@ -30,7 +27,7 @@ struct ChatroomView: View {
             }
             .padding()
             .fontWeight(.semibold)
-            .background(Color(UIColor.systemGray6))
+            .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .top)
             
             ScrollView {
                 
@@ -41,17 +38,19 @@ struct ChatroomView: View {
                     .font(.footnote)
                     .clipShape(.capsule)
                     .textFieldStyle(.roundedBorder)
-                Button(action: {}) {
-                    Image(systemName: "arrow.up.circle.fill")
-                        .font(.title)
-                        .foregroundStyle(.black)
+                
+                if(!message.isEmpty) {
+                    Button(action: {}) {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.title)
+                            .foregroundStyle(.black)
+                    }
                 }
             }
             .padding()
             .background(Color(UIColor.systemGray6))
         }
         .navigationBarBackButtonHidden()
-        .ignoresSafeArea(edges: .top)
     }
 }
 

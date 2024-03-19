@@ -29,6 +29,9 @@
 		F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6622BA99CBC00D715C8 /* UserProfile.swift */; };
 		F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */; };
 		F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */; };
+		F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */; };
+		F55ED66C2BAA07E300D715C8 /* CreateChatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */; };
+		F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66D2BAA08B500D715C8 /* DismissButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		F55ED6622BA99CBC00D715C8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonLabel.swift; sourceTree = "<group>"; };
+		F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomView.swift; sourceTree = "<group>"; };
+		F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroom.swift; sourceTree = "<group>"; };
+		F55ED66D2BAA08B500D715C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +208,7 @@
 			children = (
 				F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */,
 				F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */,
+				F55ED66D2BAA08B500D715C8 /* DismissButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 		F55ED6502BA8B96B00D715C8 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				F55ED6682BAA07C300D715C8 /* CreateChatroom */,
 				F55ED6532BA8B98100D715C8 /* Chats.swift */,
 				F55ED6512BA8B97800D715C8 /* ChatsView.swift */,
 				F55ED6552BA8C08000D715C8 /* ChatCardView.swift */,
@@ -242,6 +250,15 @@
 				F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		F55ED6682BAA07C300D715C8 /* CreateChatroom */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */,
+				F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */,
+			);
+			path = CreateChatroom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,11 +402,14 @@
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
+				F55ED66C2BAA07E300D715C8 /* CreateChatroom.swift in Sources */,
+				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
 				F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */,
 				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
+				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
 				F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
