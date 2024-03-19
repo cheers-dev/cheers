@@ -26,6 +26,8 @@
 		F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */; };
 		F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */; };
 		F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */; };
+		F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6622BA99CBC00D715C8 /* UserProfile.swift */; };
+		F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsView.swift; sourceTree = "<group>"; };
 		F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettings.swift; sourceTree = "<group>"; };
+		F55ED6622BA99CBC00D715C8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		F55ED6422BA8980900D715C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F55ED6612BA99B2800D715C8 /* UserProfile */,
 				F55ED6572BA8CC7800D715C8 /* Chatroom */,
 				F55ED6502BA8B96B00D715C8 /* Chats */,
 				F55ED6482BA8A07E00D715C8 /* Register */,
@@ -225,6 +230,15 @@
 				F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		F55ED6612BA99B2800D715C8 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6622BA99CBC00D715C8 /* UserProfile.swift */,
+				F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +373,7 @@
 			files = (
 				F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
+				F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */,
 				F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */,
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
@@ -367,6 +382,7 @@
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
 				F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */,
+				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
