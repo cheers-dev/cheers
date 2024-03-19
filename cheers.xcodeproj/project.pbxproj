@@ -28,6 +28,7 @@
 		F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */; };
 		F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6622BA99CBC00D715C8 /* UserProfile.swift */; };
 		F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */; };
+		F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettings.swift; sourceTree = "<group>"; };
 		F55ED6622BA99CBC00D715C8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */,
+				F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
+				F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
