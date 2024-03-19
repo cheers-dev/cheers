@@ -24,6 +24,8 @@
 		F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatCardView.swift */; };
 		F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */; };
 		F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */; };
+		F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */; };
+		F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		F55ED6552BA8C08000D715C8 /* ChatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCardView.swift; sourceTree = "<group>"; };
 		F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
 		F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
+		F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsView.swift; sourceTree = "<group>"; };
+		F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,10 +211,20 @@
 		F55ED6572BA8CC7800D715C8 /* Chatroom */ = {
 			isa = PBXGroup;
 			children = (
+				F55ED65C2BA95B1600D715C8 /* Settings */,
 				F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */,
 				F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */,
 			);
 			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		F55ED65C2BA95B1600D715C8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */,
+				F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,10 +361,12 @@
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */,
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
+				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
+				F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
