@@ -13,7 +13,7 @@ struct FriendsListView: View {
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink(destination: Text("group")) {
+                NavigationLink(destination: GroupsListView()) {
                     HStack(spacing: 12) {
                         Circle()
                             .stroke(Color(UIColor.systemGray4))
