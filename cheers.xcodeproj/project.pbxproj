@@ -32,6 +32,7 @@
 		F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */; };
 		F55ED66C2BAA07E300D715C8 /* CreateChatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */; };
 		F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66D2BAA08B500D715C8 /* DismissButton.swift */; };
+		F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomView.swift; sourceTree = "<group>"; };
 		F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroom.swift; sourceTree = "<group>"; };
 		F55ED66D2BAA08B500D715C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithDefaultImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */,
 				F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */,
 				F55ED66D2BAA08B500D715C8 /* DismissButton.swift */,
+				F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
 				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
 				F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */,
+				F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
