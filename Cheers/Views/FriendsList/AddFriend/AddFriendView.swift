@@ -68,6 +68,7 @@ struct AddFriendView: View {
             Spacer()
             Spacer()
         }
+        .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()
         .sheet(isPresented: $isScanSheetShow) {
             VStack {

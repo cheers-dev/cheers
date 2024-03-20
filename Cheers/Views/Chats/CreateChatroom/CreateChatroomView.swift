@@ -119,6 +119,7 @@ struct CreateChatroomView: View {
             Spacer()
         }
         .navigationBarBackButtonHidden()
+        .toolbar(.hidden, for: .tabBar)
     }
     
     enum Intention: String, CaseIterable, Identifiable {

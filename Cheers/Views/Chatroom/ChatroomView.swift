@@ -52,9 +52,7 @@ struct ChatroomView: View {
         }
         .navigationBarBackButtonHidden()
         .scrollDismissesKeyboard(.interactively)
-//        .onTapGesture {
-//            hideKeyboard()
-//        }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 

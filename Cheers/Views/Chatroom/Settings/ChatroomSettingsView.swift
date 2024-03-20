@@ -90,6 +90,7 @@ struct ChatroomSettingsView: View {
         .padding()
         .foregroundStyle(.black)
         .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.inline)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .all)
     }
