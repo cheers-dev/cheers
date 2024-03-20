@@ -5,10 +5,12 @@
 //  Created by Dong on 2024/3/20.
 //
 
+import CodeScanner
 import SwiftUI
 
 struct AddFriendView: View {
     @State var searchId = ""
+    @State var isScanSheetShow = false
     
     var body: some View {
         NavigationStack {
@@ -24,7 +26,7 @@ struct AddFriendView: View {
             HStack {
                 GrayTextField("輸入使用者 id", text: $searchId)
                     .font(.footnote)
-                Button(action: {}) {
+                Button(action: { isScanSheetShow.toggle() }) {
                     Image(systemName: "qrcode.viewfinder")
                         .font(.title)
                         .foregroundStyle(.black)
@@ -67,6 +69,22 @@ struct AddFriendView: View {
             Spacer()
         }
         .navigationBarBackButtonHidden()
+        .sheet(isPresented: $isScanSheetShow) {
+            VStack {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "https://dongdong867.dev") { response in
+                    switch response {
+                        case .success(let result):
+                            print(result)
+                        case .failure(let error):
+                            print(error)
+                    }
+                }
+                .padding()
+                .aspectRatio(1, contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+        }
+        .presentationDetents([.medium])
     }
 }
 
