@@ -12,7 +12,7 @@ struct ChatroomSettingsView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .bottom) {
                 Spacer()
                 Button(action: {}) {
                     VStack(spacing: 4) {
