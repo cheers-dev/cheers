@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8AE2BAA805600638472 /* FriendsListView.swift */; };
 		F510F8B12BAA806300638472 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B02BAA806300638472 /* FriendsList.swift */; };
+		F510F8B52BAA853900638472 /* GroupsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B42BAA853900638472 /* GroupsList.swift */; };
+		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
 		F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6172BA8916E00D715C8 /* CheersApp.swift */; };
 		F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6192BA8916E00D715C8 /* ContentView.swift */; };
 		F55ED61C2BA8916F00D715C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55ED61B2BA8916F00D715C8 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		F510F8AE2BAA805600638472 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		F510F8B02BAA806300638472 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		F510F8B42BAA853900638472 /* GroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsList.swift; sourceTree = "<group>"; };
+		F510F8B62BAA855400638472 /* GroupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListView.swift; sourceTree = "<group>"; };
 		F55ED6142BA8916E00D715C8 /* cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55ED6172BA8916E00D715C8 /* CheersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersApp.swift; sourceTree = "<group>"; };
 		F55ED6192BA8916E00D715C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,10 +120,20 @@
 		F510F8AD2BAA803400638472 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
+				F510F8B32BAA852900638472 /* GroupsList */,
 				F510F8AE2BAA805600638472 /* FriendsListView.swift */,
 				F510F8B02BAA806300638472 /* FriendsList.swift */,
 			);
 			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		F510F8B32BAA852900638472 /* GroupsList */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8B42BAA853900638472 /* GroupsList.swift */,
+				F510F8B62BAA855400638472 /* GroupsListView.swift */,
+			);
+			path = GroupsList;
 			sourceTree = "<group>";
 		};
 		F55ED60B2BA8916E00D715C8 = {
@@ -415,6 +429,8 @@
 				F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */,
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
+				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
+				F510F8B52BAA853900638472 /* GroupsList.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */,
 				F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */,
