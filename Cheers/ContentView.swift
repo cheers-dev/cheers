@@ -9,13 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            FriendsListView()
+                .tabItem {
+                    Label("朋友", systemImage: "person.2.fill")
+                }
+            
+            ChatsView()
+                .tabItem {
+                    Label("聊天室", systemImage: "ellipsis.message.fill")
+                }
+            
+            UserProfileView(
+                avatarURL: URL(string: ""),
+                name: "User name",
+                birth: Date(),
+                recentFavorite: ["燒肉", "火鍋", "漢堡"]
+            )
+            .tabItem {
+                Label("用戶", systemImage: "person.fill")
+            }
         }
-        .padding()
     }
 }
 
