@@ -10,6 +10,12 @@ import UIKit
 
 extension UINavigationController: UIGestureRecognizerDelegate {
     override open func viewDidLoad() {
+        UIApplication.shared.sendAction(
+            #selector(UIResponder.resignFirstResponder),
+            to: nil,
+            from: nil,
+            for: nil
+        )
         super.viewDidLoad()
         interactivePopGestureRecognizer?.delegate = self
     }

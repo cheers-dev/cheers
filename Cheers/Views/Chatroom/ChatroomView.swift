@@ -51,6 +51,10 @@ struct ChatroomView: View {
             .background(Color(UIColor.systemGray6))
         }
         .navigationBarBackButtonHidden()
+        .scrollDismissesKeyboard(.interactively)
+//        .onTapGesture {
+//            hideKeyboard()
+//        }
     }
 }
 
