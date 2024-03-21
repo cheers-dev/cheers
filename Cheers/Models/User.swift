@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct User: Identifiable {
-    var id: String
+struct User: Identifiable, Codable {
     
     let mail: String
     let account: String
     let name: String
     let birth: Date
     let avatar: URL?
+    
+    var id: String { account }
 }

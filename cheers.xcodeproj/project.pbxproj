@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8AE2BAA805600638472 /* FriendsListView.swift */; };
-		F510F8B12BAA806300638472 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B02BAA806300638472 /* FriendsList.swift */; };
+		F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B02BAA806300638472 /* FriendsListVM.swift */; };
 		F510F8B52BAA853900638472 /* GroupsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B42BAA853900638472 /* GroupsList.swift */; };
 		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
 		F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B92BAA8DFF00638472 /* UINavigationController.swift */; };
 		F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F510F8BC2BAA923E00638472 /* CodeScanner */; };
-		F510F8C02BAA941300638472 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* AddFriend.swift */; };
+		F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* AddFriendVM.swift */; };
 		F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* AddFriendView.swift */; };
 		F510F8C52BAAA22E00638472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C42BAAA22E00638472 /* User.swift */; };
+		F510F8C92BABDEB400638472 /* ChatroomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C82BABDEB400638472 /* ChatroomPreview.swift */; };
+		F510F8CB2BABE1E900638472 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CA2BABE1E900638472 /* Message.swift */; };
+		F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CC2BAC479200638472 /* Chatroom.swift */; };
 		F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6172BA8916E00D715C8 /* CheersApp.swift */; };
 		F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6192BA8916E00D715C8 /* ContentView.swift */; };
 		F55ED61C2BA8916F00D715C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55ED61B2BA8916F00D715C8 /* Assets.xcassets */; };
@@ -24,22 +27,22 @@
 		F55ED6332BA8916F00D715C8 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6322BA8916F00D715C8 /* CheersUITests.swift */; };
 		F55ED6352BA8916F00D715C8 /* CheersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6342BA8916F00D715C8 /* CheersUITestsLaunchTests.swift */; };
 		F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6442BA8988A00D715C8 /* LoginView.swift */; };
-		F55ED6472BA898B200D715C8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6462BA898B200D715C8 /* Login.swift */; };
-		F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6492BA8A08F00D715C8 /* Register.swift */; };
+		F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6462BA898B200D715C8 /* LoginVM.swift */; };
+		F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */; };
 		F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */; };
 		F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */; };
 		F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatsView.swift */; };
-		F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* Chats.swift */; };
+		F55ED6542BA8B98100D715C8 /* ChatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* ChatsVM.swift */; };
 		F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatCardView.swift */; };
 		F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */; };
-		F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */; };
+		F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */; };
 		F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */; };
-		F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */; };
-		F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6622BA99CBC00D715C8 /* UserProfile.swift */; };
+		F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65F2BA95B5600D715C8 /* ChatroomSettingsVM.swift */; };
+		F55ED6632BA99CBC00D715C8 /* UserProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6622BA99CBC00D715C8 /* UserProfileVM.swift */; };
 		F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */; };
 		F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */; };
 		F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */; };
-		F55ED66C2BAA07E300D715C8 /* CreateChatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */; };
+		F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */; };
 		F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66D2BAA08B500D715C8 /* DismissButton.swift */; };
 		F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */; };
 /* End PBXBuildFile section */
@@ -63,14 +66,17 @@
 
 /* Begin PBXFileReference section */
 		F510F8AE2BAA805600638472 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
-		F510F8B02BAA806300638472 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
+		F510F8B02BAA806300638472 /* FriendsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListVM.swift; sourceTree = "<group>"; };
 		F510F8B42BAA853900638472 /* GroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsList.swift; sourceTree = "<group>"; };
 		F510F8B62BAA855400638472 /* GroupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListView.swift; sourceTree = "<group>"; };
 		F510F8B92BAA8DFF00638472 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		F510F8BF2BAA941300638472 /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
+		F510F8BF2BAA941300638472 /* AddFriendVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVM.swift; sourceTree = "<group>"; };
 		F510F8C12BAA941C00638472 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		F510F8C32BAA9E4600638472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = cheers/Info.plist; sourceTree = "<group>"; };
 		F510F8C42BAAA22E00638472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F510F8C82BABDEB400638472 /* ChatroomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomPreview.swift; sourceTree = "<group>"; };
+		F510F8CA2BABE1E900638472 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F510F8CC2BAC479200638472 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		F55ED6142BA8916E00D715C8 /* cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55ED6172BA8916E00D715C8 /* CheersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersApp.swift; sourceTree = "<group>"; };
 		F55ED6192BA8916E00D715C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,22 +88,22 @@
 		F55ED6322BA8916F00D715C8 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
 		F55ED6342BA8916F00D715C8 /* CheersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F55ED6442BA8988A00D715C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		F55ED6462BA898B200D715C8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		F55ED6492BA8A08F00D715C8 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		F55ED6462BA898B200D715C8 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
 		F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
 		F55ED6512BA8B97800D715C8 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
-		F55ED6532BA8B98100D715C8 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
+		F55ED6532BA8B98100D715C8 /* ChatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVM.swift; sourceTree = "<group>"; };
 		F55ED6552BA8C08000D715C8 /* ChatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCardView.swift; sourceTree = "<group>"; };
 		F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
-		F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
+		F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomVM.swift; sourceTree = "<group>"; };
 		F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsView.swift; sourceTree = "<group>"; };
-		F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettings.swift; sourceTree = "<group>"; };
-		F55ED6622BA99CBC00D715C8 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F55ED65F2BA95B5600D715C8 /* ChatroomSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsVM.swift; sourceTree = "<group>"; };
+		F55ED6622BA99CBC00D715C8 /* UserProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVM.swift; sourceTree = "<group>"; };
 		F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonLabel.swift; sourceTree = "<group>"; };
 		F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomView.swift; sourceTree = "<group>"; };
-		F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroom.swift; sourceTree = "<group>"; };
+		F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomVM.swift; sourceTree = "<group>"; };
 		F55ED66D2BAA08B500D715C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithDefaultImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,7 +140,7 @@
 				F510F8BE2BAA93F100638472 /* AddFriend */,
 				F510F8B32BAA852900638472 /* GroupsList */,
 				F510F8AE2BAA805600638472 /* FriendsListView.swift */,
-				F510F8B02BAA806300638472 /* FriendsList.swift */,
+				F510F8B02BAA806300638472 /* FriendsListVM.swift */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -159,7 +165,7 @@
 		F510F8BE2BAA93F100638472 /* AddFriend */ = {
 			isa = PBXGroup;
 			children = (
-				F510F8BF2BAA941300638472 /* AddFriend.swift */,
+				F510F8BF2BAA941300638472 /* AddFriendVM.swift */,
 				F510F8C12BAA941C00638472 /* AddFriendView.swift */,
 			);
 			path = AddFriend;
@@ -230,6 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				F510F8C42BAAA22E00638472 /* User.swift */,
+				F510F8C82BABDEB400638472 /* ChatroomPreview.swift */,
+				F510F8CA2BABE1E900638472 /* Message.swift */,
+				F510F8CC2BAC479200638472 /* Chatroom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				F55ED6442BA8988A00D715C8 /* LoginView.swift */,
-				F55ED6462BA898B200D715C8 /* Login.swift */,
+				F55ED6462BA898B200D715C8 /* LoginVM.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -259,7 +268,7 @@
 		F55ED6482BA8A07E00D715C8 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED6492BA8A08F00D715C8 /* Register.swift */,
+				F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */,
 				F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */,
 			);
 			path = Register;
@@ -280,7 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				F55ED6682BAA07C300D715C8 /* CreateChatroom */,
-				F55ED6532BA8B98100D715C8 /* Chats.swift */,
+				F55ED6532BA8B98100D715C8 /* ChatsVM.swift */,
 				F55ED6512BA8B97800D715C8 /* ChatsView.swift */,
 				F55ED6552BA8C08000D715C8 /* ChatCardView.swift */,
 			);
@@ -292,7 +301,7 @@
 			children = (
 				F55ED65C2BA95B1600D715C8 /* Settings */,
 				F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */,
-				F55ED65A2BA8CC9C00D715C8 /* Chatroom.swift */,
+				F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -301,7 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */,
-				F55ED65F2BA95B5600D715C8 /* ChatroomSettings.swift */,
+				F55ED65F2BA95B5600D715C8 /* ChatroomSettingsVM.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -309,7 +318,7 @@
 		F55ED6612BA99B2800D715C8 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED6622BA99CBC00D715C8 /* UserProfile.swift */,
+				F55ED6622BA99CBC00D715C8 /* UserProfileVM.swift */,
 				F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */,
 			);
 			path = UserProfile;
@@ -318,7 +327,7 @@
 		F55ED6682BAA07C300D715C8 /* CreateChatroom */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED66B2BAA07E300D715C8 /* CreateChatroom.swift */,
+				F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */,
 				F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */,
 			);
 			path = CreateChatroom;
@@ -462,10 +471,11 @@
 			files = (
 				F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
-				F510F8B12BAA806300638472 /* FriendsList.swift in Sources */,
-				F510F8C02BAA941300638472 /* AddFriend.swift in Sources */,
-				F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */,
-				F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */,
+				F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */,
+				F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */,
+				F55ED6632BA99CBC00D715C8 /* UserProfileVM.swift in Sources */,
+				F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */,
+				F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */,
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
 				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
@@ -475,19 +485,21 @@
 				F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */,
 				F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
+				F510F8C92BABDEB400638472 /* ChatroomPreview.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
-				F55ED66C2BAA07E300D715C8 /* CreateChatroom.swift in Sources */,
+				F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */,
 				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
+				F510F8CB2BABE1E900638472 /* Message.swift in Sources */,
 				F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */,
-				F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */,
+				F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */,
 				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
 				F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
-				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
-				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
+				F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */,
+				F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */,
 				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
-				F55ED6542BA8B98100D715C8 /* Chats.swift in Sources */,
+				F55ED6542BA8B98100D715C8 /* ChatsVM.swift in Sources */,
 				F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
