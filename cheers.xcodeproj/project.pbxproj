@@ -11,6 +11,11 @@
 		F510F8B12BAA806300638472 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B02BAA806300638472 /* FriendsList.swift */; };
 		F510F8B52BAA853900638472 /* GroupsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B42BAA853900638472 /* GroupsList.swift */; };
 		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
+		F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B92BAA8DFF00638472 /* UINavigationController.swift */; };
+		F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F510F8BC2BAA923E00638472 /* CodeScanner */; };
+		F510F8C02BAA941300638472 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* AddFriend.swift */; };
+		F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* AddFriendView.swift */; };
+		F510F8C52BAAA22E00638472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C42BAAA22E00638472 /* User.swift */; };
 		F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6172BA8916E00D715C8 /* CheersApp.swift */; };
 		F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6192BA8916E00D715C8 /* ContentView.swift */; };
 		F55ED61C2BA8916F00D715C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55ED61B2BA8916F00D715C8 /* Assets.xcassets */; };
@@ -61,6 +66,11 @@
 		F510F8B02BAA806300638472 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		F510F8B42BAA853900638472 /* GroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsList.swift; sourceTree = "<group>"; };
 		F510F8B62BAA855400638472 /* GroupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListView.swift; sourceTree = "<group>"; };
+		F510F8B92BAA8DFF00638472 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		F510F8BF2BAA941300638472 /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
+		F510F8C12BAA941C00638472 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		F510F8C32BAA9E4600638472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = cheers/Info.plist; sourceTree = "<group>"; };
+		F510F8C42BAAA22E00638472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F55ED6142BA8916E00D715C8 /* cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55ED6172BA8916E00D715C8 /* CheersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersApp.swift; sourceTree = "<group>"; };
 		F55ED6192BA8916E00D715C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +131,7 @@
 		F510F8AD2BAA803400638472 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
+				F510F8BE2BAA93F100638472 /* AddFriend */,
 				F510F8B32BAA852900638472 /* GroupsList */,
 				F510F8AE2BAA805600638472 /* FriendsListView.swift */,
 				F510F8B02BAA806300638472 /* FriendsList.swift */,
@@ -136,9 +148,27 @@
 			path = GroupsList;
 			sourceTree = "<group>";
 		};
+		F510F8B82BAA8DE700638472 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8B92BAA8DFF00638472 /* UINavigationController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F510F8BE2BAA93F100638472 /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8BF2BAA941300638472 /* AddFriend.swift */,
+				F510F8C12BAA941C00638472 /* AddFriendView.swift */,
+			);
+			path = AddFriend;
+			sourceTree = "<group>";
+		};
 		F55ED60B2BA8916E00D715C8 = {
 			isa = PBXGroup;
 			children = (
+				F510F8C32BAA9E4600638472 /* Info.plist */,
 				F55ED6162BA8916E00D715C8 /* Cheers */,
 				F55ED6272BA8916F00D715C8 /* CheersTests */,
 				F55ED6312BA8916F00D715C8 /* CheersUITests */,
@@ -159,6 +189,7 @@
 		F55ED6162BA8916E00D715C8 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
+				F510F8B82BAA8DE700638472 /* Extensions */,
 				F55ED64D2BA8A21300D715C8 /* Components */,
 				F55ED6422BA8980900D715C8 /* Views */,
 				F55ED6412BA8980300D715C8 /* Models */,
@@ -198,6 +229,7 @@
 		F55ED6412BA8980300D715C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F510F8C42BAAA22E00638472 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,6 +340,9 @@
 			dependencies = (
 			);
 			name = cheers;
+			packageProductDependencies = (
+				F510F8BC2BAA923E00638472 /* CodeScanner */,
+			);
 			productName = cheers;
 			productReference = F55ED6142BA8916E00D715C8 /* cheers.app */;
 			productType = "com.apple.product-type.application";
@@ -380,6 +415,9 @@
 				Base,
 			);
 			mainGroup = F55ED60B2BA8916E00D715C8;
+			packageReferences = (
+				F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = F55ED6152BA8916E00D715C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -425,10 +463,12 @@
 				F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F510F8B12BAA806300638472 /* FriendsList.swift in Sources */,
+				F510F8C02BAA941300638472 /* AddFriend.swift in Sources */,
 				F55ED6632BA99CBC00D715C8 /* UserProfile.swift in Sources */,
 				F55ED65B2BA8CC9C00D715C8 /* Chatroom.swift in Sources */,
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
+				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
 				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
 				F510F8B52BAA853900638472 /* GroupsList.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
@@ -439,8 +479,10 @@
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
 				F55ED66C2BAA07E300D715C8 /* CreateChatroom.swift in Sources */,
 				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
+				F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */,
 				F55ED6602BA95B5600D715C8 /* ChatroomSettings.swift in Sources */,
 				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
+				F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* Login.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* Register.swift in Sources */,
@@ -613,11 +655,13 @@
 				DEVELOPMENT_TEAM = 5G44JXAR8Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cheers/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan code for adding friends.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,11 +686,13 @@
 				DEVELOPMENT_TEAM = 5G44JXAR8Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cheers/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan code for adding friends.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -776,6 +822,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F510F8BC2BAA923E00638472 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F55ED60C2BA8916E00D715C8 /* Project object */;
 }
