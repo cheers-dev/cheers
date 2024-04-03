@@ -45,6 +45,8 @@
 		F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */; };
 		F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66D2BAA08B500D715C8 /* DismissButton.swift */; };
 		F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */; };
+		F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */; };
+		F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784F2BBC5970002EA092 /* NSMutableData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomVM.swift; sourceTree = "<group>"; };
 		F55ED66D2BAA08B500D715C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithDefaultImage.swift; sourceTree = "<group>"; };
+		F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormDataRequest.swift; sourceTree = "<group>"; };
+		F5A8784F2BBC5970002EA092 /* NSMutableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F510F8B92BAA8DFF00638472 /* UINavigationController.swift */,
+				F5A8784F2BBC5970002EA092 /* NSMutableData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				F510F8C82BABDEB400638472 /* ChatroomPreview.swift */,
 				F510F8CA2BABE1E900638472 /* Message.swift */,
 				F510F8CC2BAC479200638472 /* Chatroom.swift */,
+				F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -490,11 +496,13 @@
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
 				F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */,
 				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
+				F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */,
 				F510F8CB2BABE1E900638472 /* Message.swift in Sources */,
 				F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */,
 				F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */,
 				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
 				F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */,
+				F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */,
