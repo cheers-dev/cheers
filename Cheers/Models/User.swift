@@ -17,3 +17,13 @@ struct User: Identifiable, Codable {
     
     var id: String { account }
 }
+
+extension User {
+    struct Create: Codable {
+        let account: String
+        let password: String
+        let mail: String
+        let name: String
+        let birth: String
+    }
+}
