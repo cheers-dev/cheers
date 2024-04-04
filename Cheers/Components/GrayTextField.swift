@@ -31,12 +31,14 @@ struct GrayTextField: View {
                     .padding(12)
                     .background(Color(UIColor.systemGray6))
                     .cornerRadius(12)
+                    .textInputAutocapitalization(.never)
             case .password:
                 SecureField(label, text: text)
                     .padding(12)
                     .background(Color(UIColor.systemGray6))
                     .cornerRadius(12)
-        }   
+                    .textInputAutocapitalization(.never)
+        }
     }
     
     enum FieldType {
