@@ -47,6 +47,8 @@
 		F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */; };
 		F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */; };
 		F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784F2BBC5970002EA092 /* NSMutableData.swift */; };
+		F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878562BBDD1B6002EA092 /* APIError.swift */; };
+		F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878592BBEF844002EA092 /* HashPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,9 @@
 		F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithDefaultImage.swift; sourceTree = "<group>"; };
 		F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormDataRequest.swift; sourceTree = "<group>"; };
 		F5A8784F2BBC5970002EA092 /* NSMutableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableData.swift; sourceTree = "<group>"; };
+		F5A878532BBDC9DE002EA092 /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
+		F5A878562BBDD1B6002EA092 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F5A878592BBEF844002EA092 /* HashPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F510F8C32BAA9E4600638472 /* Info.plist */,
+				F5A878542BBDCC1C002EA092 /* Configs */,
 				F55ED6162BA8916E00D715C8 /* Cheers */,
 				F55ED6272BA8916F00D715C8 /* CheersTests */,
 				F55ED6312BA8916F00D715C8 /* CheersUITests */,
@@ -200,6 +206,8 @@
 		F55ED6162BA8916E00D715C8 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
+				F5A878582BBEF819002EA092 /* Utilities */,
+				F5A878552BBDD18F002EA092 /* Enums */,
 				F510F8B82BAA8DE700638472 /* Extensions */,
 				F55ED64D2BA8A21300D715C8 /* Components */,
 				F55ED6422BA8980900D715C8 /* Views */,
@@ -337,6 +345,30 @@
 				F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */,
 			);
 			path = CreateChatroom;
+			sourceTree = "<group>";
+		};
+		F5A878542BBDCC1C002EA092 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878532BBDC9DE002EA092 /* dev.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		F5A878552BBDD18F002EA092 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878562BBDD1B6002EA092 /* APIError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F5A878582BBEF819002EA092 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878592BBEF844002EA092 /* HashPassword.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,8 +520,10 @@
 				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
 				F510F8B52BAA853900638472 /* GroupsList.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
+				F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */,
 				F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */,
 				F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */,
+				F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
 				F510F8C92BABDEB400638472 /* ChatroomPreview.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
@@ -547,6 +581,7 @@
 /* Begin XCBuildConfiguration section */
 		F55ED6362BA8916F00D715C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5A878532BBDC9DE002EA092 /* dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
