@@ -49,6 +49,9 @@
 		F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784F2BBC5970002EA092 /* NSMutableData.swift */; };
 		F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878562BBDD1B6002EA092 /* APIError.swift */; };
 		F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878592BBEF844002EA092 /* HashPassword.swift */; };
+		F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785B2BBF581F002EA092 /* KeychainManager.swift */; };
+		F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */; };
+		F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785F2BC051B1002EA092 /* URLRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		F5A878532BBDC9DE002EA092 /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
 		F5A878562BBDD1B6002EA092 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		F5A878592BBEF844002EA092 /* HashPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashPassword.swift; sourceTree = "<group>"; };
+		F5A8785B2BBF581F002EA092 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		F5A8785F2BC051B1002EA092 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,7 @@
 			children = (
 				F510F8B92BAA8DFF00638472 /* UINavigationController.swift */,
 				F5A8784F2BBC5970002EA092 /* NSMutableData.swift */,
+				F5A8785F2BC051B1002EA092 /* URLRequest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A878562BBDD1B6002EA092 /* APIError.swift */,
+				F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A878592BBEF844002EA092 /* HashPassword.swift */,
+				F5A8785B2BBF581F002EA092 /* KeychainManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -511,6 +520,7 @@
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */,
 				F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */,
+				F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */,
 				F55ED6632BA99CBC00D715C8 /* UserProfileVM.swift in Sources */,
 				F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */,
 				F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */,
@@ -527,6 +537,7 @@
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
 				F510F8C92BABDEB400638472 /* ChatroomPreview.swift in Sources */,
 				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
+				F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
 				F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */,
 				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
@@ -543,6 +554,7 @@
 				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
 				F55ED6542BA8B98100D715C8 /* ChatsVM.swift in Sources */,
 				F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */,
+				F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +723,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cheers/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Scan code for adding friends.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -742,6 +755,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cheers/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Scan code for adding friends.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
