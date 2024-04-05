@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var mail: String = ""
-    @State var password: String = ""
+    @ObservedObject var login: LoginVM
+    @State var showErrorAlert = false
     
     var body: some View {
         VStack {
@@ -22,9 +22,9 @@ struct LoginView: View {
                 .fontWeight(.semibold)
             Spacer()
             VStack(spacing: 20) {
-                GrayTextField("信箱", text: $mail)
-                GrayTextField("密碼", type: .password, text: $password)
-                Button(action: {}) {
+                GrayTextField("信箱", text: $login.account)
+                GrayTextField("密碼", type: .password, text: $login.password)
+                Button(action: { login.submit() }) {
                     Text("登入")
                         .padding(12)
                         .foregroundStyle(.white)
@@ -41,7 +41,7 @@ struct LoginView: View {
             HStack {
                 Text("還沒有帳號嗎？")
                     .foregroundStyle(.gray)
-                Button(action: {}) {
+                Button(action: { }) {
                     Text("註冊")
                         .foregroundStyle(.black)
                 }
@@ -49,9 +49,21 @@ struct LoginView: View {
         }
         .font(.system(size: 14))
         .padding()
+        .onReceive(login.$error){ error in
+            if error != nil {
+                showErrorAlert.toggle()
+            }
+        }
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button(action: { showErrorAlert.toggle() }) {
+                Text("OK")
+            }
+        } message: {
+            Text(login.error?.localizedDescription ?? "")
+        }
     }
 }
 
 #Preview {
-    LoginView()
+    LoginView(login: LoginVM())
 }
