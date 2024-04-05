@@ -17,10 +17,9 @@ final class RegisterVM: ObservableObject {
     @Published var error: Error?
     
     func submit() {
-//        Task {
-//            try await register()
-//        }
-        print(hashPassword(password))
+        Task {
+            try await register()
+        }
     }
     
     func register() async throws {
@@ -31,8 +30,6 @@ final class RegisterVM: ObservableObject {
             guard let registerURLText = Bundle.main.infoDictionary?["REGISTER_URL"] as? String,
                   let registerURL = URL(string: registerURLText.replacing("\\", with: ""))
             else { throw APIError.invalidURL }
-            
-            print(registerURL)
             
             var request = URLRequest(url: registerURL)
             request.httpMethod = "POST"
