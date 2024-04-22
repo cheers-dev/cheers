@@ -84,6 +84,8 @@ struct KeychainManager {
         
         let status = SecItemDelete(query as CFDictionary)
         guard status == errSecSuccess
-        else { throw KeychainError.unexpectedStatus(status) }
+        else {
+            throw KeychainError.unexpectedStatus(status)
+        }
     }
 }
