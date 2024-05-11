@@ -45,6 +45,7 @@
 		F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */; };
 		F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66D2BAA08B500D715C8 /* DismissButton.swift */; };
 		F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */; };
+		F57EC2322BEFF9030041261D /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = F57EC2312BEFF9030041261D /* SocketIO */; };
 		F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */; };
 		F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784F2BBC5970002EA092 /* NSMutableData.swift */; };
 		F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878562BBDD1B6002EA092 /* APIError.swift */; };
@@ -129,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */,
+				F57EC2322BEFF9030041261D /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +400,7 @@
 			name = cheers;
 			packageProductDependencies = (
 				F510F8BC2BAA923E00638472 /* CodeScanner */,
+				F57EC2312BEFF9030041261D /* SocketIO */,
 			);
 			productName = cheers;
 			productReference = F55ED6142BA8916E00D715C8 /* cheers.app */;
@@ -473,6 +476,7 @@
 			mainGroup = F55ED60B2BA8916E00D715C8;
 			packageReferences = (
 				F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				F57EC2302BEFF9030041261D /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = F55ED6152BA8916E00D715C8 /* Products */;
 			projectDirPath = "";
@@ -901,6 +905,14 @@
 				minimumVersion = 2.4.0;
 			};
 		};
+		F57EC2302BEFF9030041261D /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -908,6 +920,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */;
 			productName = CodeScanner;
+		};
+		F57EC2312BEFF9030041261D /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F57EC2302BEFF9030041261D /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
