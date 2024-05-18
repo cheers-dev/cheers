@@ -22,7 +22,7 @@ struct LoginView: View {
                 .fontWeight(.semibold)
             Spacer()
             VStack(spacing: 20) {
-                GrayTextField("信箱", text: $login.account)
+                GrayTextField("帳號", text: $login.account)
                 GrayTextField("密碼", type: .password, text: $login.password)
                 Button(action: { login.submit() }) {
                     Text("登入")
@@ -59,7 +59,7 @@ struct LoginView: View {
                 Text("OK")
             }
         } message: {
-            Text(login.error?.localizedDescription ?? "")
+            Text(String(describing: login.error))
         }
     }
 }
