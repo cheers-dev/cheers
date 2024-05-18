@@ -1,5 +1,5 @@
 //
-//  ChatCardView.swift
+//  ChatroomCardView.swift
 //  cheers
 //
 //  Created by Dong on 2024/3/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChatCardView: View {
+struct ChatroomCardView: View {
     let imageURL: URL?
     let name: String
     var lastMessage: Message?
@@ -47,7 +47,7 @@ struct ChatCardView: View {
 }
 
 #Preview {
-    ChatCardView(
+    ChatroomCardView(
         imageURL: URL(string: ""),
         name: "Name",
         lastMessage: nil,
