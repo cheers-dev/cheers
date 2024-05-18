@@ -1,5 +1,5 @@
 //
-//  ChatsView.swift
+//  ChatroomListView.swift
 //  cheers
 //
 //  Created by Dong on 2024/3/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChatsView: View {
+struct ChatroomListView: View {
     @State var search = ""
     var body: some View {
         NavigationStack {
@@ -38,7 +38,6 @@ struct ChatsView: View {
         .navigationBarTitleDisplayMode(.large)
     }
 }
-
 #Preview {
-    ChatsView()
+    ChatroomListView()
 }
