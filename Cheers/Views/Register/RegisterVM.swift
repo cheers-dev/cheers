@@ -27,8 +27,8 @@ final class RegisterVM: ObservableObject {
             guard password == confirmPassword
             else { throw APIError.custom("Password validation failed.") }
             
-            guard let registerURLText = Bundle.main.infoDictionary?["REGISTER_URL"] as? String,
-                  let registerURL = URL(string: registerURLText.replacing("\\", with: ""))
+            guard let endpointURLText = Bundle.main.infoDictionary?["REGISTER_URL"] as? String,
+                  let registerURL = URL(string: endpointURLText.replacing("\\", with: "") + "/user/register")
             else { throw APIError.invalidURL }
             
             var request = URLRequest(url: registerURL)

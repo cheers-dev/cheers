@@ -8,8 +8,6 @@
 import SwiftUI
 
 final class LoginVM: ObservableObject {
-    @AppStorage("accessTokenFound") var accessTokenFound = KeychainManager.getToken("accessToken") != nil
-    
     @Published var account = ""
     @Published var password = ""
     @Published var error: Error?
@@ -22,8 +20,8 @@ final class LoginVM: ObservableObject {
     
     func login() async throws {
         do {
-            guard let loginURLText = Bundle.main.infoDictionary?["LOGIN_URL"] as? String,
-                  let loginURL = URL(string: loginURLText.replacing("\\", with: ""))
+            guard let endpointURLText = Bundle.main.infoDictionary?["LOGIN_URL"] as? String,
+                  let loginURL = URL(string: endpointURLText.replacing("\\", with: "") + "/user/login")
             else { throw APIError.invalidURL }
             
             var request = URLRequest(url: loginURL)
@@ -40,7 +38,7 @@ final class LoginVM: ObservableObject {
                 String(data: data, encoding: .utf8)!,
                 as: "accessToken"
             )
-            accessTokenFound = true
+            UserDefaults.standard.setValue(true, forKey: "accessTokenFound")
         } catch {
             self.error = error
         }
