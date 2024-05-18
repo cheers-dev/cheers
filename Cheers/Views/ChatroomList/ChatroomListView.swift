@@ -26,7 +26,7 @@ struct ChatroomListView: View {
                         imageURL: chatroomInfo.chatroom.avatar,
                         name: chatroomInfo.chatroom.name,
                         lastMessage: chatroomInfo.lastMessage,
-                        time: Date()
+                        time: chatroomInfo.lastMessage?.createTime
                     )
                     .padding(.trailing)
                 }
