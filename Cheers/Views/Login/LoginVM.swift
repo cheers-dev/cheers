@@ -20,7 +20,7 @@ final class LoginVM: ObservableObject {
     
     func login() async throws {
         do {
-            guard let endpointURLText = Bundle.main.infoDictionary?["LOGIN_URL"] as? String,
+            guard let endpointURLText = Bundle.main.infoDictionary?["GATEWAY_URL"] as? String,
                   let loginURL = URL(string: endpointURLText.replacing("\\", with: "") + "/user/login")
             else { throw APIError.invalidURL }
             
