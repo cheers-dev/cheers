@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ChatroomListView: View {
+    @ObservedObject var chatroomListVM: ChatroomListVM
+    
     @State var search = ""
+    @State var showErrorAlert = false
+    
     var body: some View {
         NavigationStack {
-            List {
+            List(search.isEmpty
+                 ? chatroomListVM.chatroomList
+                 : chatroomListVM.filterChatroomWithName(search)
+            ) { chatroomInfo in
                 NavigationLink {
                     ChatroomView()
                 } label: {
                     ChatCardView(
-                        imageURL: URL(string: ""),
-                        name: "Name",
-                        lastMessage: "testing message",
+                        imageURL: chatroomInfo.chatroom.avatar,
+                        name: chatroomInfo.chatroom.name,
+                        lastMessage: chatroomInfo.lastMessage,
                         time: Date()
                     )
                     .padding(.trailing)
@@ -36,8 +43,22 @@ struct ChatroomListView: View {
         }
         .searchable(text: $search)
         .navigationBarTitleDisplayMode(.large)
+        .onReceive(chatroomListVM.$error) { error in
+            if error != nil {
+                showErrorAlert.toggle()
+            }
+        }
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button(action: { showErrorAlert.toggle() }) {
+                Text("OK")
+            }
+        } message: {
+            if chatroomListVM.error != nil {
+                Text(String(describing: chatroomListVM.error!))
+            }
+        }
     }
 }
 #Preview {
-    ChatroomListView()
+    ChatroomListView(chatroomListVM: ChatroomListVM())
 }
