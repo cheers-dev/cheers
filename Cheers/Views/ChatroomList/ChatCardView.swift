@@ -10,8 +10,8 @@ import SwiftUI
 struct ChatCardView: View {
     let imageURL: URL?
     let name: String
-    var lastMessage: String
-    var time: Date
+    var lastMessage: Message?
+    var time: Date?
     
     var body: some View {
         HStack(spacing: 12) {
@@ -35,10 +35,10 @@ struct ChatCardView: View {
                     Text(name)
                         .fontWeight(.semibold)
                     Spacer()
-                    Text(time.formatted(date: .omitted, time: .shortened))
+                    Text(time?.formatted(date: .omitted, time: .shortened) ?? "")
                         .font(.footnote)
                 }
-                Text(lastMessage)
+                Text(lastMessage?.message ?? "")
                     .font(.callout)
                     .foregroundStyle(.gray)
             }
@@ -50,7 +50,7 @@ struct ChatCardView: View {
     ChatCardView(
         imageURL: URL(string: ""),
         name: "Name",
-        lastMessage: "testing message",
+        lastMessage: nil,
         time: Date()
     )
 }
