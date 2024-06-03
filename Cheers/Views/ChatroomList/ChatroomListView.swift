@@ -20,13 +20,13 @@ struct ChatroomListView: View {
                  : chatroomListVM.filterChatroomWithName(search)
             ) { chatroomInfo in
                 NavigationLink {
-                    ChatroomView()
+                    ChatroomView(chatroomVM: ChatroomVM(chatroom: chatroomInfo.chatroom))
                 } label: {
-                    ChatCardView(
+                    ChatroomCardView(
                         imageURL: chatroomInfo.chatroom.avatar,
                         name: chatroomInfo.chatroom.name,
                         lastMessage: chatroomInfo.lastMessage,
-                        time: chatroomInfo.lastMessage?.createTime
+                        time: chatroomInfo.lastMessage?.createdAt
                     )
                     .padding(.trailing)
                 }

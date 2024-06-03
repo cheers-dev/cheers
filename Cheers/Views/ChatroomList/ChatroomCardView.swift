@@ -38,7 +38,7 @@ struct ChatroomCardView: View {
                     Text(time?.formatted(date: .omitted, time: .shortened) ?? "")
                         .font(.footnote)
                 }
-                Text(lastMessage?.message ?? "")
+                Text(lastMessage?.content ?? "")
                     .font(.callout)
                     .foregroundStyle(.gray)
             }
