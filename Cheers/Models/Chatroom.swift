@@ -9,9 +9,8 @@ import Foundation
 
 struct Chatroom: Identifiable, Codable {
     
-    let id: Int
+    let id: UUID
     let name: String
     let avatar: URL?
-    var messages: [Message]
     
 }
