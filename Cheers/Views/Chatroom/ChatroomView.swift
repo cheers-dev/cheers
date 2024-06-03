@@ -58,6 +58,20 @@ struct ChatroomView: View {
         .navigationBarBackButtonHidden()
         .scrollDismissesKeyboard(.interactively)
         .toolbar(.hidden, for: .tabBar)
+        .onReceive(chatroomVM.$error) { error in
+            if error != nil {
+                showErrorAlert.toggle()
+            }
+        }
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button(action: { showErrorAlert.toggle() }) {
+                Text("OK")
+            }
+        } message: {
+            if chatroomVM.error != nil {
+                Text(String(describing: chatroomVM.error!))
+            }
+        }
     }
 }
 
