@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("accessTokenFound") var accessTokenFound = KeychainManager.getToken("accessToken") != nil
+    @AppStorage("accessTokenFound") var accessTokenFound = false
     
     var body: some View {
         Group {
@@ -19,7 +19,7 @@ struct ContentView: View {
                             Label("朋友", systemImage: "person.2.fill")
                         }
                     
-                    ChatsView()
+                    ChatroomListView(chatroomListVM: ChatroomListVM())
                         .tabItem {
                             Label("聊天室", systemImage: "ellipsis.message.fill")
                         }
