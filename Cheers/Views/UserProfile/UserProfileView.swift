@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    @AppStorage("accessTokenFound")
+    var accessTokenFound = KeychainManager.getToken("accessToken") != nil
     let avatarURL: URL?
     let name: String
     let birth: Date
@@ -82,6 +84,15 @@ struct UserProfileView: View {
                             label: "收藏口袋"
                         )
                     }
+                    Divider()
+                    Button(action: { logout() }) {
+                        NavigationButtonLabel(
+                            systemName: "rectangle.portrait.and.arrow.right",
+                            label: "登出"
+                        )
+                        .fontWeight(.medium)
+                        .foregroundStyle(.red)
+                    }
                 }
                 .foregroundStyle(.black)
                 .padding()
@@ -89,6 +100,15 @@ struct UserProfileView: View {
                 Spacer()
             }
             .padding()
+        }
+    }
+    
+    func logout() {
+        do {
+            accessTokenFound = false
+            try KeychainManager.deleteToken("accessToken")
+        } catch(let error) {
+            print(error)
         }
     }
 }
