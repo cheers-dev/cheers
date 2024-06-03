@@ -16,9 +16,12 @@
 		F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* AddFriendVM.swift */; };
 		F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* AddFriendView.swift */; };
 		F510F8C52BAAA22E00638472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C42BAAA22E00638472 /* User.swift */; };
-		F510F8C92BABDEB400638472 /* ChatroomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C82BABDEB400638472 /* ChatroomPreview.swift */; };
+		F510F8C92BABDEB400638472 /* ChatroomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C82BABDEB400638472 /* ChatroomInfo.swift */; };
 		F510F8CB2BABE1E900638472 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CA2BABE1E900638472 /* Message.swift */; };
 		F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CC2BAC479200638472 /* Chatroom.swift */; };
+		F53F0D092BF7A76100F3DBD1 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */; };
+		F53F0D0E2BF9240100F3DBD1 /* SocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */; };
+		F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D0F2C05150200F3DBD1 /* MessageView.swift */; };
 		F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6172BA8916E00D715C8 /* CheersApp.swift */; };
 		F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6192BA8916E00D715C8 /* ContentView.swift */; };
 		F55ED61C2BA8916F00D715C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55ED61B2BA8916F00D715C8 /* Assets.xcassets */; };
@@ -31,9 +34,9 @@
 		F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */; };
 		F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */; };
 		F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */; };
-		F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatsView.swift */; };
-		F55ED6542BA8B98100D715C8 /* ChatsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* ChatsVM.swift */; };
-		F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatCardView.swift */; };
+		F55ED6522BA8B97800D715C8 /* ChatroomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatroomListView.swift */; };
+		F55ED6542BA8B98100D715C8 /* ChatroomListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* ChatroomListVM.swift */; };
+		F55ED6562BA8C08000D715C8 /* ChatroomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatroomCardView.swift */; };
 		F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */; };
 		F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */; };
 		F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */; };
@@ -82,9 +85,12 @@
 		F510F8C12BAA941C00638472 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		F510F8C32BAA9E4600638472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = cheers/Info.plist; sourceTree = "<group>"; };
 		F510F8C42BAAA22E00638472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F510F8C82BABDEB400638472 /* ChatroomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomPreview.swift; sourceTree = "<group>"; };
+		F510F8C82BABDEB400638472 /* ChatroomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomInfo.swift; sourceTree = "<group>"; };
 		F510F8CA2BABE1E900638472 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F510F8CC2BAC479200638472 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
+		F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
+		F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketError.swift; sourceTree = "<group>"; };
+		F53F0D0F2C05150200F3DBD1 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		F55ED6142BA8916E00D715C8 /* cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55ED6172BA8916E00D715C8 /* CheersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersApp.swift; sourceTree = "<group>"; };
 		F55ED6192BA8916E00D715C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,9 +106,9 @@
 		F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
 		F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
-		F55ED6512BA8B97800D715C8 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
-		F55ED6532BA8B98100D715C8 /* ChatsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVM.swift; sourceTree = "<group>"; };
-		F55ED6552BA8C08000D715C8 /* ChatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCardView.swift; sourceTree = "<group>"; };
+		F55ED6512BA8B97800D715C8 /* ChatroomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListView.swift; sourceTree = "<group>"; };
+		F55ED6532BA8B98100D715C8 /* ChatroomListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListVM.swift; sourceTree = "<group>"; };
+		F55ED6552BA8C08000D715C8 /* ChatroomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomCardView.swift; sourceTree = "<group>"; };
 		F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
 		F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomVM.swift; sourceTree = "<group>"; };
 		F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsView.swift; sourceTree = "<group>"; };
@@ -258,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				F510F8C42BAAA22E00638472 /* User.swift */,
-				F510F8C82BABDEB400638472 /* ChatroomPreview.swift */,
+				F510F8C82BABDEB400638472 /* ChatroomInfo.swift */,
 				F510F8CA2BABE1E900638472 /* Message.swift */,
 				F510F8CC2BAC479200638472 /* Chatroom.swift */,
 				F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */,
@@ -272,7 +278,7 @@
 				F510F8AD2BAA803400638472 /* FriendsList */,
 				F55ED6612BA99B2800D715C8 /* UserProfile */,
 				F55ED6572BA8CC7800D715C8 /* Chatroom */,
-				F55ED6502BA8B96B00D715C8 /* Chats */,
+				F55ED6502BA8B96B00D715C8 /* ChatroomList */,
 				F55ED6482BA8A07E00D715C8 /* Register */,
 				F55ED6432BA8985E00D715C8 /* Login */,
 			);
@@ -308,15 +314,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		F55ED6502BA8B96B00D715C8 /* Chats */ = {
+		F55ED6502BA8B96B00D715C8 /* ChatroomList */ = {
 			isa = PBXGroup;
 			children = (
 				F55ED6682BAA07C300D715C8 /* CreateChatroom */,
-				F55ED6532BA8B98100D715C8 /* ChatsVM.swift */,
-				F55ED6512BA8B97800D715C8 /* ChatsView.swift */,
-				F55ED6552BA8C08000D715C8 /* ChatCardView.swift */,
+				F55ED6532BA8B98100D715C8 /* ChatroomListVM.swift */,
+				F55ED6512BA8B97800D715C8 /* ChatroomListView.swift */,
+				F55ED6552BA8C08000D715C8 /* ChatroomCardView.swift */,
 			);
-			path = Chats;
+			path = ChatroomList;
 			sourceTree = "<group>";
 		};
 		F55ED6572BA8CC7800D715C8 /* Chatroom */ = {
@@ -325,6 +331,7 @@
 				F55ED65C2BA95B1600D715C8 /* Settings */,
 				F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */,
 				F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */,
+				F53F0D0F2C05150200F3DBD1 /* MessageView.swift */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 			children = (
 				F5A878562BBDD1B6002EA092 /* APIError.swift */,
 				F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */,
+				F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 			children = (
 				F5A878592BBEF844002EA092 /* HashPassword.swift */,
 				F5A8785B2BBF581F002EA092 /* KeychainManager.swift */,
+				F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -520,17 +529,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55ED6522BA8B97800D715C8 /* ChatsView.swift in Sources */,
+				F55ED6522BA8B97800D715C8 /* ChatroomListView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */,
 				F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */,
 				F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */,
+				F53F0D092BF7A76100F3DBD1 /* SocketClient.swift in Sources */,
 				F55ED6632BA99CBC00D715C8 /* UserProfileVM.swift in Sources */,
 				F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */,
 				F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */,
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
 				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
+				F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */,
 				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
 				F510F8B52BAA853900638472 /* GroupsList.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
@@ -539,8 +550,8 @@
 				F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */,
 				F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
-				F510F8C92BABDEB400638472 /* ChatroomPreview.swift in Sources */,
-				F55ED6562BA8C08000D715C8 /* ChatCardView.swift in Sources */,
+				F510F8C92BABDEB400638472 /* ChatroomInfo.swift in Sources */,
+				F55ED6562BA8C08000D715C8 /* ChatroomCardView.swift in Sources */,
 				F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */,
 				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
 				F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */,
@@ -548,6 +559,7 @@
 				F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */,
 				F510F8CB2BABE1E900638472 /* Message.swift in Sources */,
 				F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */,
+				F53F0D0E2BF9240100F3DBD1 /* SocketError.swift in Sources */,
 				F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */,
 				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
 				F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */,
@@ -556,7 +568,7 @@
 				F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */,
 				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
-				F55ED6542BA8B98100D715C8 /* ChatsVM.swift in Sources */,
+				F55ED6542BA8B98100D715C8 /* ChatroomListVM.swift in Sources */,
 				F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */,
 				F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */,
 			);

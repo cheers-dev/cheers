@@ -4,9 +4,9 @@
 <dict>
 	<key>BASE_APPLICATION_TAG</key>
 	<string>$(BASE_APPLICATION_TAG)</string>
-	<key>LOGIN_URL</key>
-	<string>$(LOGIN_URL)</string>
-	<key>REGISTER_URL</key>
-	<string>$(REGISTER_URL)</string>
+	<key>GATEWAY_URL</key>
+	<string>$(GATEWAY_URL)</string>
+	<key>SOCKET_URL</key>
+	<string>$(SOCKET_URL)</string>
 </dict>
 </plist>
