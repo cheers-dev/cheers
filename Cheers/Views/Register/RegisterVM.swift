@@ -43,8 +43,7 @@ final class RegisterVM: ObservableObject {
                 birth: birth.ISO8601Format(.iso8601Date(timeZone: .gmt))
             )
             
-            let encoder = JSONEncoder()
-            let jsonData = try encoder.encode(createUser)
+            let jsonData = try JSONEncoder().encode(createUser)
             request.httpBody = jsonData
             
             let (data, response) = try await URLSession.shared.data(for: request)
@@ -53,7 +52,20 @@ final class RegisterVM: ObservableObject {
                   200...299 ~= httpResponse.statusCode
             else { throw APIError.responseError }
             
-            print(String(data: data, encoding: .utf8) ?? "")
+            guard let loginResponse = try? JSONDecoder().decode(User.LoginResponse.self, from: data)
+            else { throw APIError.invalidData }
+            
+            try KeychainManager.saveToken(
+                loginResponse.accessToken,
+                as: "accessToken"
+            )
+            
+            try KeychainManager.saveToken(
+                "\(loginResponse.userId)",
+                as: "userId"
+            
+            )
+            UserDefaults.standard.setValue(true, forKey: "accessTokenFound")
         } catch {
             self.error = error
         }

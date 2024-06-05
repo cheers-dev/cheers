@@ -34,9 +34,18 @@ final class LoginVM: ObservableObject {
                   200...299 ~= httpResponse.statusCode
             else { throw APIError.responseError }
             
+            guard let loginResponse = try? JSONDecoder().decode(User.LoginResponse.self, from: data)
+            else { throw APIError.invalidData }
+            
             try KeychainManager.saveToken(
-                String(data: data, encoding: .utf8)!,
+                loginResponse.accessToken,
                 as: "accessToken"
+            )
+            
+            try KeychainManager.saveToken(
+                "\(loginResponse.userId)",
+                as: "userId"
+            
             )
             UserDefaults.standard.setValue(true, forKey: "accessTokenFound")
         } catch {

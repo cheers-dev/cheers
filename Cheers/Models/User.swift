@@ -26,4 +26,9 @@ extension User {
         let name: String
         let birth: String
     }
+    
+    struct LoginResponse: Codable {
+        let accessToken: String
+        let userId: UUID
+    }
 }
