@@ -70,7 +70,7 @@ final class ChatroomVM: ObservableObject {
             guard let messages = try? JSONDecoder().decode([Message].self, from: data)
             else { throw APIError.invalidData }
             
-            self.messages = messages
+            self.messages = messages.sorted(by: { $0.createdAt! < $1.createdAt! })
         } catch {
             self.error = error
         }
