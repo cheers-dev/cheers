@@ -54,7 +54,7 @@ final class ChatroomListVM: ObservableObject {
     
     func filterChatroomWithName(_ query: String) -> [ChatroomInfo] {
         return chatroomList.filter { chatroom in
-            chatroom.chatroom.name.contains(query)
+            chatroom.chatroom.name.lowercased().contains(query.lowercased())
         }
     }
 }
