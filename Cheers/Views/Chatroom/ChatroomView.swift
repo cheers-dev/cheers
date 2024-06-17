@@ -14,62 +14,81 @@ struct ChatroomView: View {
     @State var message = ""
     @State var showErrorAlert = false
     
+    var userId = KeychainManager.getToken("userId")
+    
     var body: some View {
         NavigationStack {
-            HStack {
-                DismissButton()
-                Text(chatroomVM.chatroom.name)
-                    .font(.title3)
-                Spacer()
-                NavigationLink(destination: ChatroomSettingsView()) {
-                    Image(systemName: "line.horizontal.3")
+            VStack(spacing: 0) {
+                HStack {
+                    DismissButton()
+                    Text(chatroomVM.chatroom.name)
                         .font(.title3)
-                        .foregroundStyle(.black)
-                }
-            }
-            .padding()
-            .fontWeight(.semibold)
-            .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .top)
-            
-            ScrollView {
-                ForEach(chatroomVM.messages.sorted(by: { $0.createdAt! < $1.createdAt! })) { message in
-                    Text(message.content)
-                }
-            }
-            .frame(maxHeight: .infinity)
-            
-            HStack {
-                TextField("輸入訊息", text: $message)
-                    .font(.footnote)
-                    .clipShape(.capsule)
-                    .textFieldStyle(.roundedBorder)
-                
-                if(!message.isEmpty) {
-                    Button(action: { chatroomVM.sendMessage(message) }) {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .font(.title)
+                    Spacer()
+                    NavigationLink(destination: ChatroomSettingsView()) {
+                        Image(systemName: "line.horizontal.3")
+                            .font(.title3)
                             .foregroundStyle(.black)
                     }
                 }
+                .padding()
+                .fontWeight(.semibold)
+                .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .top)
+                
+                ScrollViewReader { scrollView in
+                    ScrollView {
+                        ForEach($chatroomVM.messages, id: \.id) { message in
+                            MessageView(
+                                message: message,
+                                isSender: userId == message.wrappedValue.userId.uuidString
+                            )
+                            .id(message.id)
+                        }
+                    }
+                    .frame(maxHeight: .infinity)
+                    .contentMargins(.vertical, 8)
+                    .onReceive(chatroomVM.messages.publisher) { _ in
+                        withAnimation {
+                            scrollView.scrollTo(chatroomVM.messages.last?.id, anchor: .bottom)
+                        }
+                    }
+                }
+                
+                HStack {
+                    TextField("輸入訊息", text: $message)
+                        .font(.footnote)
+                        .clipShape(.capsule)
+                        .textFieldStyle(.roundedBorder)
+                    
+                    if(!message.isEmpty) {
+                        Button(action: {
+                            chatroomVM.sendMessage(message)
+                            message = ""
+                        }) {
+                            Image(systemName: "arrow.up.circle.fill")
+                                .font(.title)
+                                .foregroundStyle(.black)
+                        }
+                    }
+                }
+                .padding()
+                .background(Color(UIColor.systemGray6))
             }
-            .padding()
-            .background(Color(UIColor.systemGray6))
-        }
-        .navigationBarBackButtonHidden()
-        .scrollDismissesKeyboard(.interactively)
-        .toolbar(.hidden, for: .tabBar)
-        .onReceive(chatroomVM.$error) { error in
-            if error != nil {
-                showErrorAlert.toggle()
+            .navigationBarBackButtonHidden()
+            .scrollDismissesKeyboard(.interactively)
+            .toolbar(.hidden, for: .tabBar)
+            .onReceive(chatroomVM.$error) { error in
+                if error != nil {
+                    showErrorAlert.toggle()
+                }
             }
-        }
-        .alert("Error", isPresented: $showErrorAlert) {
-            Button(action: { showErrorAlert.toggle() }) {
-                Text("OK")
-            }
-        } message: {
-            if chatroomVM.error != nil {
-                Text(String(describing: chatroomVM.error!))
+            .alert("Error", isPresented: $showErrorAlert) {
+                Button(action: { showErrorAlert.toggle() }) {
+                    Text("OK")
+                }
+            } message: {
+                if chatroomVM.error != nil {
+                    Text(String(describing: chatroomVM.error!))
+                }
             }
         }
     }
