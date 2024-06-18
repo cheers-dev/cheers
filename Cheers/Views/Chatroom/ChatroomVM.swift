@@ -30,7 +30,6 @@ final class ChatroomVM: ObservableObject {
         
         self.socketManager = SocketManager(socketURL: socketURL, config: [.log(true), .compress])
         self.socket = self.socketManager.defaultSocket
-//        self.loadMessages()
         self.setupSocketEvent()
         self.socket.connect()
     }
@@ -83,7 +82,17 @@ final class ChatroomVM: ObservableObject {
     }
     
     func sendMessage(_ message: String) {
-        let userId = "c3c28a01-84cc-4f29-9ff5-e1b7e4a2a2bc"
+        guard let userId = KeychainManager.getToken("userId")
+        else {
+            do {
+                try KeychainManager.deleteToken("accessToken")
+            } catch {
+                self.error = error
+            }
+            
+            self.error = KeychainError.itemNotFound
+            return
+        }
         
         let payload: [String: Any] = [
             "userId": userId,
