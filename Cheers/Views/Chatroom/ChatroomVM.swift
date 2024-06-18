@@ -13,6 +13,7 @@ final class ChatroomVM: ObservableObject {
     @Published var page = 1
     @Published var loading = true
     @Published var error: Error?
+    @Published var hasMore = true
     @Published var messages: [Message] = []
     @Published var chatroom: Chatroom
     
@@ -29,7 +30,7 @@ final class ChatroomVM: ObservableObject {
         
         self.socketManager = SocketManager(socketURL: socketURL, config: [.log(true), .compress])
         self.socket = self.socketManager.defaultSocket
-        self.loadMessages()
+//        self.loadMessages()
         self.setupSocketEvent()
         self.socket.connect()
     }
@@ -42,13 +43,17 @@ final class ChatroomVM: ObservableObject {
     
     func loadMessages() {
         Task {
-            await fetchMessage()
-            page += 1
+            let messages = await fetchMessage()
+            self.messages.insert(contentsOf: messages, at: 0)
+            self.page += 1
+            
+            if messages.count < 30 {
+                self.hasMore = false
+            }
         }
     }
     
-    @MainActor
-    private func fetchMessage() async {
+    private func fetchMessage() async -> [Message] {
         do {
             guard let accessToken = KeychainManager.getToken("accessToken")
             else { throw KeychainError.itemNotFound }
@@ -70,9 +75,10 @@ final class ChatroomVM: ObservableObject {
             guard let messages = try? JSONDecoder().decode([Message].self, from: data)
             else { throw APIError.invalidData }
             
-            self.messages = messages.sorted(by: { $0.createdAt! < $1.createdAt! })
+            return messages.sorted(by: { $0.createdAt! < $1.createdAt! })
         } catch {
             self.error = error
+            return []
         }
     }
     
@@ -93,10 +99,6 @@ final class ChatroomVM: ObservableObject {
     private func setupSocketEvent() {
         self.socket.on(clientEvent: .connect) { _, _ in
             self.socket.emit("connectToChatroom", "\(self.chatroom.id)")
-        }
-        
-        self.socket.on(clientEvent: .disconnect) { _, _ in
-
         }
         
         self.socket.on(clientEvent: .error) { data, _ in
