@@ -12,6 +12,7 @@ struct ChatroomView: View {
     @ObservedObject var chatroomVM: ChatroomVM
     
     @State var message = ""
+    @State var lastLoadMessage: Message?
     @State var showErrorAlert = false
     
     var userId = KeychainManager.getToken("userId")
@@ -20,7 +21,12 @@ struct ChatroomView: View {
         NavigationStack {
             VStack(spacing: 0) {
                 header
-                chatMessages
+                if chatroomVM.loading {
+                    ProgressView()
+                        .frame(maxHeight: .infinity)
+                } else {
+                    chatMessages
+                }
                 footer
             }
             .navigationBarBackButtonHidden()
@@ -63,20 +69,45 @@ struct ChatroomView: View {
     var chatMessages: some View {
         ScrollViewReader { scrollView in
             ScrollView {
-                ForEach($chatroomVM.messages, id: \.id) { message in
-                    MessageView(
-                        message: message,
-                        isSender: userId == message.wrappedValue.userId.uuidString
-                    )
-                    .id(message.id)
+                LazyVStack {
+                    if chatroomVM.hasMore {
+                        ProgressView()
+                            .padding(.vertical, 8)
+                        .onAppear {
+                            chatroomVM.loadMessages()
+                        }
+                    }
+                    
+                    ForEach($chatroomVM.messages, id: \.id) { message in
+                        MessageView(
+                            message: message,
+                            isSender: userId == message.wrappedValue.userId.uuidString
+                        )
+                        .id(message.id)
+                    }
+                    .onAppear {
+                        if let id = chatroomVM.messages.last?.id {
+                            withAnimation {
+                                scrollView
+                                    .scrollTo(id, anchor: .bottom)
+                            }
+                        }
+                    }
                 }
             }
             .frame(maxHeight: .infinity)
             .contentMargins(.vertical, 8)
             .onReceive(chatroomVM.messages.publisher) { _ in
-                withAnimation {
-                    scrollView.scrollTo(chatroomVM.messages.last?.id, anchor: .bottom)
+                if let lastMessage = chatroomVM.messages.last,
+                   lastMessage.id != lastLoadMessage?.id,
+                   lastMessage.userId.uuidString == userId {
+                    withAnimation {
+                        scrollView
+                            .scrollTo(chatroomVM.messages.last?.id, anchor: .bottom)
+                    }
                 }
+                
+                lastLoadMessage = chatroomVM.messages.last
             }
         }
     }
