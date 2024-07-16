@@ -56,6 +56,7 @@
 		F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785B2BBF581F002EA092 /* KeychainManager.swift */; };
 		F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */; };
 		F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785F2BC051B1002EA092 /* URLRequest.swift */; };
+		F5DF38E82C4701E100E957E8 /* FriendListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DF38E72C4701E100E957E8 /* FriendListCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		F5A8785B2BBF581F002EA092 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		F5A8785F2BC051B1002EA092 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		F5DF38E72C4701E100E957E8 /* FriendListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				F510F8B32BAA852900638472 /* GroupsList */,
 				F510F8AE2BAA805600638472 /* FriendsListView.swift */,
 				F510F8B02BAA806300638472 /* FriendsListVM.swift */,
+				F5DF38E72C4701E100E957E8 /* FriendListCardView.swift */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
 				F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */,
 				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
+				F5DF38E82C4701E100E957E8 /* FriendListCardView.swift in Sources */,
 				F510F8B52BAA853900638472 /* GroupsList.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */,
