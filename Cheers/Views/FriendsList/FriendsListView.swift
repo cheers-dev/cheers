@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FriendsListView: View {
+    @ObservedObject var viewModel: FriendsListVM
     @State var search = ""
     
     var body: some View {
@@ -41,15 +42,8 @@ struct FriendsListView: View {
                     }
                 }
                 
-                NavigationLink(destination: ChatroomView()) {
-                    HStack(spacing: 12) {
-                        AsyncImageWithDefaultImage(imageURL: URL(string: ""))
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                        Text("User name")
-                            .fontWeight(.medium)
-                        
-                    }
+                ForEach($viewModel.friends) { friend in
+                    FriendListCardView(user: friend)
                 }
             }
             .listStyle(.plain)
@@ -60,5 +54,5 @@ struct FriendsListView: View {
 }
 
 #Preview {
-    FriendsListView()
+    FriendsListView(viewModel: FriendsListVM())
 }
