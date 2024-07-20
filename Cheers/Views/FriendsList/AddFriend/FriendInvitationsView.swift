@@ -1,5 +1,5 @@
 //
-//  FriendInvitesView.swift
+//  FriendInvitationsView.swift
 //  cheers
 //
 //  Created by Dong on 2024/3/20.
@@ -8,7 +8,7 @@
 import CodeScanner
 import SwiftUI
 
-struct FriendInvitesView: View {
+struct FriendInvitationsView: View {
     @State var searchId = ""
     @State var isScanSheetShow = false
     
@@ -58,5 +58,5 @@ struct FriendInvitesView: View {
 }
 
 #Preview {
-    FriendInvitesView()
+    FriendInvitationsView()
 }
