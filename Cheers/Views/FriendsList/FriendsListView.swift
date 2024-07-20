@@ -14,7 +14,7 @@ struct FriendsListView: View {
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink(destination: AddFriendView()) {
+                NavigationLink(destination: FriendInvitesView()) {
                     HStack(spacing: 12) {
                         Circle()
                             .stroke(Color(UIColor.systemGray4))
@@ -23,7 +23,7 @@ struct FriendsListView: View {
                                 Image(systemName: "plus")
                                     .font(.title2)
                             }
-                        Text("添加好友")
+                        Text("好友申請")
                             .fontWeight(.medium)
                     }
                 }
