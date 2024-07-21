@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,13 @@
 		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
 		F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B92BAA8DFF00638472 /* UINavigationController.swift */; };
 		F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F510F8BC2BAA923E00638472 /* CodeScanner */; };
-		F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* AddFriendVM.swift */; };
-		F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* AddFriendView.swift */; };
+		F510F8C02BAA941300638472 /* FriendInvitationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */; };
+		F510F8C22BAA941C00638472 /* FriendInvitationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */; };
 		F510F8C52BAAA22E00638472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C42BAAA22E00638472 /* User.swift */; };
 		F510F8C92BABDEB400638472 /* ChatroomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C82BABDEB400638472 /* ChatroomInfo.swift */; };
 		F510F8CB2BABE1E900638472 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CA2BABE1E900638472 /* Message.swift */; };
 		F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CC2BAC479200638472 /* Chatroom.swift */; };
+		F52514122C4C513000FF2916 /* FriendInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52514112C4C513000FF2916 /* FriendInvitation.swift */; };
 		F53F0D092BF7A76100F3DBD1 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */; };
 		F53F0D0E2BF9240100F3DBD1 /* SocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */; };
 		F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D0F2C05150200F3DBD1 /* MessageView.swift */; };
@@ -56,7 +57,8 @@
 		F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785B2BBF581F002EA092 /* KeychainManager.swift */; };
 		F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */; };
 		F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785F2BC051B1002EA092 /* URLRequest.swift */; };
-		F5DF38E82C4701E100E957E8 /* FriendListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DF38E72C4701E100E957E8 /* FriendListCardView.swift */; };
+		F5C05F5B2C4D8ECD0006897E /* RequestWithAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C05F5A2C4D8ECD0006897E /* RequestWithAccessToken.swift */; };
+		F5DF38E82C4701E100E957E8 /* UserAvatarWithName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DF38E72C4701E100E957E8 /* UserAvatarWithName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,13 +84,14 @@
 		F510F8B42BAA853900638472 /* GroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsList.swift; sourceTree = "<group>"; };
 		F510F8B62BAA855400638472 /* GroupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListView.swift; sourceTree = "<group>"; };
 		F510F8B92BAA8DFF00638472 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		F510F8BF2BAA941300638472 /* AddFriendVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVM.swift; sourceTree = "<group>"; };
-		F510F8C12BAA941C00638472 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitationsVM.swift; sourceTree = "<group>"; };
+		F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitationsView.swift; sourceTree = "<group>"; };
 		F510F8C32BAA9E4600638472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = cheers/Info.plist; sourceTree = "<group>"; };
 		F510F8C42BAAA22E00638472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F510F8C82BABDEB400638472 /* ChatroomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomInfo.swift; sourceTree = "<group>"; };
 		F510F8CA2BABE1E900638472 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F510F8CC2BAC479200638472 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
+		F52514112C4C513000FF2916 /* FriendInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitation.swift; sourceTree = "<group>"; };
 		F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
 		F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketError.swift; sourceTree = "<group>"; };
 		F53F0D0F2C05150200F3DBD1 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -129,8 +132,23 @@
 		F5A8785B2BBF581F002EA092 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		F5A8785F2BC051B1002EA092 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
-		F5DF38E72C4701E100E957E8 /* FriendListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCardView.swift; sourceTree = "<group>"; };
+		F5C05F5A2C4D8ECD0006897E /* RequestWithAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWithAccessToken.swift; sourceTree = "<group>"; };
+		F5DF38E72C4701E100E957E8 /* UserAvatarWithName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarWithName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F52514102C4C2CE800FF2916 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				InvitationQRCodeView.swift,
+			);
+			target = F55ED6132BA8916E00D715C8 /* cheers */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F525140D2C4C1C8900FF2916 /* InvitationQRCode */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F52514102C4C2CE800FF2916 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = InvitationQRCode; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F55ED6112BA8916E00D715C8 /* Frameworks */ = {
@@ -162,11 +180,11 @@
 		F510F8AD2BAA803400638472 /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
-				F510F8BE2BAA93F100638472 /* AddFriend */,
+				F510F8BE2BAA93F100638472 /* FriendInvitations */,
 				F510F8B32BAA852900638472 /* GroupsList */,
 				F510F8AE2BAA805600638472 /* FriendsListView.swift */,
 				F510F8B02BAA806300638472 /* FriendsListVM.swift */,
-				F5DF38E72C4701E100E957E8 /* FriendListCardView.swift */,
+				F5DF38E72C4701E100E957E8 /* UserAvatarWithName.swift */,
 			);
 			path = FriendsList;
 			sourceTree = "<group>";
@@ -190,13 +208,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F510F8BE2BAA93F100638472 /* AddFriend */ = {
+		F510F8BE2BAA93F100638472 /* FriendInvitations */ = {
 			isa = PBXGroup;
 			children = (
-				F510F8BF2BAA941300638472 /* AddFriendVM.swift */,
-				F510F8C12BAA941C00638472 /* AddFriendView.swift */,
+				F525140D2C4C1C8900FF2916 /* InvitationQRCode */,
+				F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */,
+				F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */,
 			);
-			path = AddFriend;
+			path = FriendInvitations;
 			sourceTree = "<group>";
 		};
 		F55ED60B2BA8916E00D715C8 = {
@@ -271,6 +290,7 @@
 				F510F8CA2BABE1E900638472 /* Message.swift */,
 				F510F8CC2BAC479200638472 /* Chatroom.swift */,
 				F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */,
+				F52514112C4C513000FF2916 /* FriendInvitation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +410,7 @@
 				F5A878592BBEF844002EA092 /* HashPassword.swift */,
 				F5A8785B2BBF581F002EA092 /* KeychainManager.swift */,
 				F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */,
+				F5C05F5A2C4D8ECD0006897E /* RequestWithAccessToken.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -535,7 +556,7 @@
 				F55ED6522BA8B97800D715C8 /* ChatroomListView.swift in Sources */,
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */,
-				F510F8C02BAA941300638472 /* AddFriendVM.swift in Sources */,
+				F510F8C02BAA941300638472 /* FriendInvitationsVM.swift in Sources */,
 				F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */,
 				F53F0D092BF7A76100F3DBD1 /* SocketClient.swift in Sources */,
 				F55ED6632BA99CBC00D715C8 /* UserProfileVM.swift in Sources */,
@@ -546,7 +567,7 @@
 				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
 				F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */,
 				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
-				F5DF38E82C4701E100E957E8 /* FriendListCardView.swift in Sources */,
+				F5DF38E82C4701E100E957E8 /* UserAvatarWithName.swift in Sources */,
 				F510F8B52BAA853900638472 /* GroupsList.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */,
@@ -562,17 +583,19 @@
 				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
 				F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */,
 				F510F8CB2BABE1E900638472 /* Message.swift in Sources */,
-				F510F8C22BAA941C00638472 /* AddFriendView.swift in Sources */,
+				F510F8C22BAA941C00638472 /* FriendInvitationsView.swift in Sources */,
 				F53F0D0E2BF9240100F3DBD1 /* SocketError.swift in Sources */,
 				F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */,
 				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
 				F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */,
+				F5C05F5B2C4D8ECD0006897E /* RequestWithAccessToken.swift in Sources */,
 				F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */,
 				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
 				F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */,
 				F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */,
 				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
 				F55ED6542BA8B98100D715C8 /* ChatroomListVM.swift in Sources */,
+				F52514122C4C513000FF2916 /* FriendInvitation.swift in Sources */,
 				F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */,
 				F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */,
 			);
