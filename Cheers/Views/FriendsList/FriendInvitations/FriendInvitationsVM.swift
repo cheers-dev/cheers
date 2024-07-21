@@ -23,7 +23,14 @@ final class FriendInvitationsVM: ObservableObject {
     
     func acceptInvitation(_ id: UUID) async {
         do {
-            let _ = try await RequestWithAccessToken.get("/friend/accept?id=\(id)")
+            let _ = try await RequestWithAccessToken.send(
+                "friend/accept?id=\(id)",
+                methodType: .PATCH
+            )
+            
+            self.friendInvitations.removeAll { invitation in
+                invitation.id == id
+            }
         } catch {
             self.error = error
         }
@@ -31,7 +38,14 @@ final class FriendInvitationsVM: ObservableObject {
     
     func rejectInvitation(_ id: UUID) async {
         do {
-            let _ = try await RequestWithAccessToken.get("/friend/reject?id=\(id)")
+            let _ = try await RequestWithAccessToken.send(
+                "friend/reject?id=\(id)",
+                methodType: .PATCH
+            )
+            
+            self.friendInvitations.removeAll { invitation in
+                invitation.id == id
+            }
         } catch {
             self.error = error
         }
@@ -41,7 +55,7 @@ final class FriendInvitationsVM: ObservableObject {
     private func fetchFriendInvitations() async {
         do{
             let friendInvitations: [FriendInvitation] = try await RequestWithAccessToken
-                .get("/friend/getInvites")
+                .send("/friend/getInvites", methodType: .GET)
             
             self.friendInvitations = friendInvitations
         } catch {
