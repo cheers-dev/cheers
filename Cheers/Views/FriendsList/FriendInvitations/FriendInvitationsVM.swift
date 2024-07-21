@@ -21,6 +21,22 @@ final class FriendInvitationsVM: ObservableObject {
         }
     }
     
+    func acceptInvitation(_ id: UUID) async {
+        do {
+            let _ = try await RequestWithAccessToken.get("/friend/accept?id=\(id)")
+        } catch {
+            self.error = error
+        }
+    }
+    
+    func rejectInvitation(_ id: UUID) async {
+        do {
+            let _ = try await RequestWithAccessToken.get("/friend/reject?id=\(id)")
+        } catch {
+            self.error = error
+        }
+    }
+    
     @MainActor
     private func fetchFriendInvitations() async {
         do{
