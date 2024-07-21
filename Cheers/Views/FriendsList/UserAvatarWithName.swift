@@ -1,5 +1,5 @@
 //
-//  FriendListCardView.swift
+//  UserAvatarWithName.swift
 //  cheers
 //
 //  Created by Dong on 2024/7/17.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct FriendListCardView: View {
+struct UserAvatarWithName: View {
     @Binding var user: User
     
     var body: some View {
