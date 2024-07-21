@@ -42,11 +42,19 @@ struct FriendInvitationsView: View {
                     UserAvatarWithName(user: $friendInvitation.requestor)
                     Spacer()
                     
-                    Button(action: {}) { Text("接受") }
-                        .tint(.green)
+                    Button(action: { Task {
+                        await friendInvitationVM
+                            .acceptInvitation($friendInvitation.wrappedValue.id)
+                    }}) {
+                        Text("接受")
+                    }.tint(.green)
                     
-                    Button(action: {}) { Text("拒絕") }
-                        .tint(.red)
+                    Button(action: { Task {
+                        await friendInvitationVM
+                            .rejectInvitation($friendInvitation.wrappedValue.id)
+                    }}) {
+                        Text("拒絕")
+                    }.tint(.red)
                 }
                 .buttonStyle(.bordered)
             }.listStyle(.plain)
