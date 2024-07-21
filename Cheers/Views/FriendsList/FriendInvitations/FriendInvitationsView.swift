@@ -37,7 +37,19 @@ struct FriendInvitationsView: View {
             }
             .padding()
             
-            Spacer()
+            List($friendInvitationVM.friendInvitations) { $friendInvitation in
+                HStack {
+                    UserAvatarWithName(user: $friendInvitation.requestor)
+                    Spacer()
+                    
+                    Button(action: {}) { Text("接受") }
+                        .tint(.green)
+                    
+                    Button(action: {}) { Text("拒絕") }
+                        .tint(.red)
+                }
+                .buttonStyle(.bordered)
+            }.listStyle(.plain)
         }
         .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()
