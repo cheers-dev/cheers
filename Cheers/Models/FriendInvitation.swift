@@ -7,13 +7,23 @@
 
 import Foundation
 
-struct FrinedInvitation: Identifiable, Codable {
+struct FriendInvitation: Identifiable, Codable {
    
     let id: UUID
-    let requestor: User
-    let status: Status
-    
+    var requestor: User
+    var status: Status
+}
+
+extension FriendInvitation {
     enum Status: String, Codable {
         case pending, accepted, rejected
     }
+}
+
+extension FriendInvitation {
+    static var dummy = FriendInvitation(
+        id: UUID(),
+        requestor: User.dummy,
+        status: .pending
+    )
 }
