@@ -12,7 +12,7 @@ struct User: Identifiable, Codable {
     let mail: String
     let account: String
     let name: String
-    let birth: Date
+    let birth: Date?
     let avatar: URL?
     
     var id: String { account }
@@ -31,4 +31,14 @@ extension User {
         let accessToken: String
         let userId: UUID
     }
+}
+
+extension User {
+    static var dummy = User(
+        mail: "dummy@example.com",
+        account: "dummy",
+        name: "Dummy", 
+        birth: Date(),
+        avatar: nil
+    )
 }
