@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct FriendsListView: View {
-    @ObservedObject var viewModel: FriendsListVM
+    @ObservedObject var friendsListVM: FriendsListVM
     @State var search = ""
+    @State var showErrorAlert = false
     
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink(destination: FriendInvitationsView()) {
+                NavigationLink(
+                    destination: FriendInvitationsView(friendInvitationVM: FriendInvitationsVM())
+                ) {
                     HStack(spacing: 12) {
                         Circle()
                             .stroke(Color(UIColor.systemGray4))
@@ -42,17 +45,33 @@ struct FriendsListView: View {
                     }
                 }
                 
-                ForEach($viewModel.friends) { friend in
-                    FriendListCardView(user: friend)
+                ForEach($friendsListVM.friends) { friend in
+                    NavigationLink(destination: Text("User Analysis")) {
+                        UserAvatarWithName(user: friend)
+                    }
                 }
             }
             .listStyle(.plain)
             .navigationTitle("好友列表")
             .searchable(text: $search)
+            .onReceive(friendsListVM.$error) { error in
+                if error != nil {
+                    showErrorAlert.toggle()
+                }
+            }
+            .alert("Error", isPresented: $showErrorAlert) {
+                Button(action: { showErrorAlert.toggle() }) {
+                    Text("OK")
+                }
+            } message: {
+                if friendsListVM.error != nil {
+                    Text(String(describing: friendsListVM.error!))
+                }
+            }
         }
     }
 }
 
 #Preview {
-    FriendsListView(viewModel: FriendsListVM())
+    FriendsListView(friendsListVM: FriendsListVM())
 }
