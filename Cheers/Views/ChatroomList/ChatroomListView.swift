@@ -15,31 +15,7 @@ struct ChatroomListView: View {
     
     var body: some View {
         NavigationStack {
-            List(search.isEmpty
-                 ? chatroomListVM.chatroomList
-                 : chatroomListVM.filterChatroomWithName(search)
-            ) { chatroomInfo in
-                NavigationLink {
-                    ChatroomView(chatroomVM: ChatroomVM(chatroom: chatroomInfo.chatroom))
-                } label: {
-                    ChatroomCardView(
-                        imageURL: chatroomInfo.chatroom.avatar,
-                        name: chatroomInfo.chatroom.name,
-                        lastMessage: chatroomInfo.lastMessage,
-                        time: chatroomInfo.lastMessage?.createdAt
-                    )
-                    .padding(.trailing)
-                }
-            }
-            .listStyle(.plain)
-            .navigationTitle("聊天室")
-            .toolbarBackground(Color(UIColor.systemGray6), for: .navigationBar)
-            .toolbar {
-                NavigationLink(destination: CreateChatroomView()) {
-                    Image(systemName: "ellipsis.message.fill")
-                        .foregroundStyle(.black)
-                }
-            }
+            chatroomList
         }
         .searchable(text: $search)
         .navigationBarTitleDisplayMode(.large)
@@ -58,7 +34,36 @@ struct ChatroomListView: View {
             }
         }
     }
+    
+    var chatroomList: some View {
+        List(search.isEmpty
+             ? chatroomListVM.chatroomList
+             : chatroomListVM.filterChatroomWithName(search)
+        ) { chatroomInfo in
+            NavigationLink {
+                ChatroomView(chatroomVM: ChatroomVM(chatroom: chatroomInfo.chatroom))
+            } label: {
+                ChatroomCardView(
+                    imageURL: chatroomInfo.chatroom.avatar,
+                    name: chatroomInfo.chatroom.name,
+                    lastMessage: chatroomInfo.lastMessage,
+                    time: chatroomInfo.lastMessage?.createdAt
+                )
+                .padding(.trailing)
+            }
+        }
+        .listStyle(.plain)
+        .navigationTitle("聊天室")
+        .toolbarBackground(Color(UIColor.systemGray6), for: .navigationBar)
+        .toolbar {
+            NavigationLink(destination: CreateChatroomView()) {
+                Image(systemName: "ellipsis.message.fill")
+                    .foregroundStyle(.black)
+            }
+        }
+    }
 }
+
 #Preview {
     ChatroomListView(chatroomListVM: ChatroomListVM())
 }
