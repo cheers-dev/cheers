@@ -14,7 +14,7 @@ struct ContentView: View {
         Group {
             if accessTokenFound {
                 TabView {
-                    FriendsListView()
+                    FriendsListView(friendsListVM: FriendsListVM())
                         .tabItem {
                             Label("朋友", systemImage: "person.2.fill")
                         }
