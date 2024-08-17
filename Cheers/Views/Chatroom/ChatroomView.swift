@@ -55,7 +55,7 @@ struct ChatroomView: View {
             Text(chatroomVM.chatroom.name)
                 .font(.title3)
             Spacer()
-            NavigationLink(destination: ChatroomSettingsView()) {
+            NavigationLink(destination: ChatroomSettingsView(viewModel: ChatroomSettingsVM())) {
                 Image(systemName: "line.horizontal.3")
                     .font(.title3)
                     .foregroundStyle(.black)
