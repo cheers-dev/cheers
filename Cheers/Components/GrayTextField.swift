@@ -46,7 +46,8 @@ struct GrayTextField: View {
     }
 }
 
+@available(iOS 18, *)
 #Preview {
-    @State var text = ""
+    @Previewable @State var text = ""
     return GrayTextField("test", text: $text)
 }
