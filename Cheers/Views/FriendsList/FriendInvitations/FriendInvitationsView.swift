@@ -27,8 +27,18 @@ struct FriendInvitationsView: View {
             .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .top)
             
             HStack {
-                GrayTextField("輸入使用者 id", text: $searchId)
-                    .font(.footnote)
+                ZStack(alignment: .trailing) {
+                    GrayTextField("輸入使用者 id", text: $searchId)
+                        .font(.footnote)
+                    if (searchId != "") {
+                        Button(action: {}) {
+                            Image(systemName: "magnifyingglass.circle.fill")
+                                .padding(.horizontal, 8)
+                                .font(.title2)
+                                .foregroundStyle(.black)
+                        }
+                    }
+                }
                 Button(action: { isScanSheetShow.toggle() }) {
                     Image(systemName: "qrcode.viewfinder")
                         .font(.title)
