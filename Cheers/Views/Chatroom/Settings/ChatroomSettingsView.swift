@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ChatroomSettingsView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var viewModel: ChatroomSettingsVM
+    
+    @State var showMembers: Bool = false
+    @State var showInvite: Bool = false
     
     var body: some View {
         VStack {
             HStack(alignment: .bottom) {
                 Spacer()
-                Button(action: {}) {
+                Button(action: { showMembers = true }) {
                     VStack(spacing: 4) {
                         Image(systemName: "person.2.fill")
                             .font(.title)
@@ -22,7 +26,7 @@ struct ChatroomSettingsView: View {
                     }
                 }
                 Spacer()
-                Button(action: {}) {
+                Button(action: { showInvite = true }) {
                     VStack(spacing: 4) {
                         Image(systemName: "person.fill.badge.plus")
                             .font(.title)
@@ -34,7 +38,7 @@ struct ChatroomSettingsView: View {
                     VStack(spacing: 4) {
                         Image(systemName: "rectangle.portrait.and.arrow.right")
                             .font(.title)
-                        Text("邀請")
+                        Text("離開")
                     }
                 }
                 Spacer()
@@ -76,6 +80,12 @@ struct ChatroomSettingsView: View {
             
             Spacer()
         }
+        .padding()
+        .foregroundStyle(.black)
+        .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.inline)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .all)
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 DismissButton()
@@ -87,15 +97,35 @@ struct ChatroomSettingsView: View {
                     .fontWeight(.semibold)
             }
         }
-        .padding()
-        .foregroundStyle(.black)
-        .navigationBarBackButtonHidden()
-        .navigationBarTitleDisplayMode(.inline)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .all)
+        .sheet(isPresented: $showMembers) {
+            Text("Members")
+                .presentationDetents([.medium, .large])
+        }
+        .sheet(isPresented: $showInvite) { inviteSheet }
+        
+    }
+    
+    var inviteSheet: some View {
+        viewModel.getFriends()
+        return NavigationView {
+            List($viewModel.friends) { $friend in
+                HStack {
+                    UserAvatarWithName(user: $friend)
+                    Spacer()
+                    
+                    Button(action: {}) {
+                        Text("邀請")
+                    }.buttonStyle(.bordered)
+                }
+            }
+            .navigationTitle("Invite")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .listStyle(.plain)
+        .presentationDetents([.medium, .large])
     }
 }
 
 #Preview {
-    ChatroomSettingsView()
+    ChatroomSettingsView(viewModel: ChatroomSettingsVM())
 }
