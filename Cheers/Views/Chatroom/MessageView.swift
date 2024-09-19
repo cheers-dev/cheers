@@ -10,18 +10,17 @@ import SwiftUI
 struct MessageView: View {
     @Binding var message: Message
     @State var isSender: Bool
-    
+
     var body: some View {
         HStack {
             if isSender { Spacer() }
-            
+
             Text(message.content)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 12)
+                .padding(12)
                 .foregroundStyle(isSender ? .white : .primary)
                 .background(isSender ? .blue : .init(uiColor: .systemGray5))
-                .clipShape(Capsule())
-            
+                .clipShape(RoundedRectangle(cornerRadius: 24, style: .circular))
+
             if !isSender { Spacer() }
         }
         .padding(.horizontal, 12)
