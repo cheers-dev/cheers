@@ -16,11 +16,11 @@ struct MessageView: View {
             if isSender { Spacer() }
             
             Text(message.content)
-                .padding(.vertical, 8)
+                .padding(.vertical, 10)
                 .padding(.horizontal, 12)
                 .foregroundStyle(isSender ? .white : .primary)
                 .background(isSender ? .blue : .init(uiColor: .systemGray5))
-                .clipShape(Capsule())
+                .clipShape(RoundedRectangle(cornerRadius: 20.0))
             
             if !isSender { Spacer() }
         }
@@ -29,8 +29,8 @@ struct MessageView: View {
     }
 }
 
-@available(iOS 18, *)
-#Preview {
-    @Previewable @State var message = Message(id: UUID(), userId: UUID(), content: "Hello, World!", createdAt: nil)
-    MessageView(message: $message, isSender: true)
-}
+//@available(iOS 18, *)
+//#Preview {
+//    @Previewable @State var message = Message(id: UUID(), userId: UUID(), content: "Hello, World!", createdAt: nil)
+//    MessageView(message: $message, isSender: true)
+//}
