@@ -15,6 +15,7 @@ final class ChatroomVM: ObservableObject {
     @Published var error: Error?
     @Published var hasMore = true
     @Published var messages: [Message] = []
+    @Published var recommendations: [RecommendationCard] = []
     @Published var chatroom: Chatroom
     
     private var socketManager: SocketManager
@@ -133,6 +134,41 @@ final class ChatroomVM: ObservableObject {
             }
             
             self.messages.append(message)
+        }
+        
+        self.socket.on("recommend") { data, _ in
+            guard let responses = data[0] as? [[String: Any]]
+            else {
+                print("Error: Data is not a valid string dictionary")
+                return
+            }
+            
+            let recommendations = responses.compactMap { dict -> RecommendationCard? in
+                guard
+                    let name = dict["name"] as? String,
+                    let category = dict["category"] as? String,
+                    let rating = dict["rating"] as? Double,
+                    let address = dict["address"] as? String,
+                    let phone = dict["phone"] as? String,
+                    let price = dict["price"] as? String
+                else {
+                    return nil
+                }
+
+                return RecommendationCard(
+                    name: name,
+                    category: category,
+                    rating: rating,
+                    address: address,
+                    phone: phone,
+                    price: price
+                )
+            }
+                
+            DispatchQueue.main.async {
+                self.recommendations = recommendations
+                print("Received recommendations: \(responses)")
+            }
         }
     }
     
