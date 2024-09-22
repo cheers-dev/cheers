@@ -15,12 +15,19 @@ struct MessageView: View {
         HStack {
             if isSender { Spacer() }
             
-            Text(message.content)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 12)
-                .foregroundStyle(isSender ? .white : .primary)
-                .background(isSender ? .blue : .init(uiColor: .systemGray5))
-                .clipShape(RoundedRectangle(cornerRadius: 20.0))
+            VStack (alignment: .leading) {
+                if !isSender {
+                    Text("\(message.name)")
+                        .font(.system(size: 13))
+                        .padding(.horizontal, 5)
+                }
+                Text(message.content)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 12)
+                    .foregroundStyle(isSender ? .white : .primary)
+                    .background(isSender ? .blue : .init(uiColor: .systemGray5))
+                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+            }
             
             if !isSender { Spacer() }
         }
