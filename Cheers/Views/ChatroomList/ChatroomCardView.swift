@@ -12,37 +12,37 @@ struct ChatroomCardView: View {
     let name: String
     var lastMessage: Message?
     var time: Date?
-    
+
     var body: some View {
         HStack(spacing: 12) {
-            AsyncImage(url: imageURL) { res in
-                switch res {
-                    case .success(let image):
-                        image
-                            .resizable()
-                    default:
-                        Image("icon")
-                            .resizable()
-                            .padding(4)
-                            .background(Color(UIColor.systemGray5))
-                }
-            }
-            .frame(width: 50, height: 50)
-            .clipShape(Circle())
-            
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(name)
-                        .fontWeight(.semibold)
-                    Spacer()
-                    Text(time?.formatted(date: .omitted, time: .shortened) ?? "")
-                        .font(.footnote)
-                }
-                Text(lastMessage?.content ?? "")
-                    .font(.callout)
-                    .foregroundStyle(.gray)
-            }
+            AsyncImageWithDefaultImage(imageURL: imageURL)
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+
+            chatroomContent
         }
+    }
+
+    private var chatroomContent: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(name)
+                    .fontWeight(.semibold)
+                Spacer()
+                if time != nil { dynamicTime.font(.footnote) }
+            }
+
+            Text(lastMessage?.content ?? "")
+                .lineLimit(2)
+                .font(.callout)
+                .foregroundStyle(.gray)
+        }
+    }
+
+    private var dynamicTime: some View {
+        time!.timeIntervalSinceNow < -86400
+            ? Text(time!.formatted(date: .abbreviated, time: .omitted))
+            : Text(time!.formatted(date: .omitted, time: .shortened))
     }
 }
 
