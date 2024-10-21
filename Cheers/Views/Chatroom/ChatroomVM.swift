@@ -44,11 +44,14 @@ final class ChatroomVM: ObservableObject {
     func loadMessages() {
         Task {
             let messages = await fetchMessage()
-            self.messages.insert(contentsOf: messages, at: 0)
-            self.page += 1
             
-            if messages.count < 30 {
-                self.hasMore = false
+            DispatchQueue.main.async {
+                self.messages.insert(contentsOf: messages, at: 0)
+                self.page += 1
+                
+                if messages.count < 30 {
+                    self.hasMore = false
+                }
             }
         }
     }
@@ -104,6 +107,38 @@ final class ChatroomVM: ObservableObject {
         emitSendMessageEvent(payload)
     }
     
+    // MARK: - Recommendation
+    func fetchRecommendations() async -> [RecommendationCard]{
+        do {
+            guard let accessToken = KeychainManager.getToken("accessToken")
+            else { throw KeychainError.itemNotFound }
+            
+            guard let endpointURLText = Bundle.main.infoDictionary?["GATEWAY_URL"] as? String,
+                  let getChatroomListURL = URL(string: endpointURLText.replacing("\\", with: "") + "/chat/recommendation/\(self.chatroom.id)?page=\(page)")
+            else { throw APIError.invalidURL }
+            
+            print("Request URL: \(getChatroomListURL)")
+            
+            var request = URLRequest(url: getChatroomListURL)
+            request.httpMethod = "GET"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  200...299 ~= httpResponse.statusCode
+            else { throw APIError.responseError }
+            
+            guard let recommendations = try? JSONDecoder().decode([RecommendationCard].self, from: data)
+            else { throw APIError.invalidData }
+            
+            return recommendations
+        } catch {
+            self.error = error
+            return []
+        }
+    }
+    
     // MARK: - Socket
     
     private func setupSocketEvent() {
@@ -150,7 +185,8 @@ final class ChatroomVM: ObservableObject {
                     let rating = dict["rating"] as? Double,
                     let address = dict["address"] as? String,
                     let phone = dict["phone"] as? String,
-                    let price = dict["price"] as? String
+                    let price = dict["price"] as? String,
+                    let opening_time = dict["opening_time"] as? String
                 else {
                     return nil
                 }
@@ -161,7 +197,8 @@ final class ChatroomVM: ObservableObject {
                     rating: rating,
                     address: address,
                     phone: phone,
-                    price: price
+                    price: price,
+                    opening_time: opening_time
                 )
             }
                 

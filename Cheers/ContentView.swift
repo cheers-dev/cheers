@@ -25,6 +25,7 @@ struct ContentView: View {
                         }
                     
                     UserProfileView(
+                        userProfileVM: UserProfileVM(),
                         avatarURL: URL(string: ""),
                         name: "User name",
                         birth: Date(),

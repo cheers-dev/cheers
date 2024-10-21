@@ -32,6 +32,7 @@ struct MessageView: View {
             if !isSender { Spacer() }
         }
         .padding(.horizontal, 12)
+        .padding(.vertical, 1.5)
         .frame(maxWidth: .infinity)
     }
 }

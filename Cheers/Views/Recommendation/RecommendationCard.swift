@@ -14,4 +14,5 @@ struct RecommendationCard: Decodable {
     let address: String
     let phone: String
     let price: String
+    let opening_time: String?
 }

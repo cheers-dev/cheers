@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    @ObservedObject var userProfileVM: UserProfileVM
+    
     @AppStorage("accessTokenFound")
     var accessTokenFound = KeychainManager.getToken("accessToken") != nil
     let avatarURL: URL?
@@ -64,11 +66,20 @@ struct UserProfileView: View {
                         )
                     }
                     Divider()
-                    NavigationLink(destination: Text("好友分析")) {
+                    NavigationLink(destination: GroupInteraction(
+                        chatInteractionCards: $userProfileVM.chatInteractionCards,
+                        recommendInteractionCards: $userProfileVM.recommendInteractionCards
+                    )) {
                         NavigationButtonLabel(
                             systemName: "text.magnifyingglass.rtl",
-                            label: "好友分析"
+                            label: "群組聚聚"
                         )
+                    }
+                    .onAppear {
+                        Task {
+                            await userProfileVM.fetchRecommendationList()
+                            userProfileVM.mapChatroomChatInteractionCard()
+                        }
                     }
                     Divider()
                     NavigationLink(destination: Text("美食盛典")) {
@@ -115,6 +126,7 @@ struct UserProfileView: View {
 
 #Preview {
     UserProfileView(
+        userProfileVM: UserProfileVM(),
         avatarURL: URL(string: ""),
         name: "User",
         birth: Date(),

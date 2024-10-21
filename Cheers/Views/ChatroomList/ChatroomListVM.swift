@@ -57,4 +57,8 @@ final class ChatroomListVM: ObservableObject {
             chatroom.chatroom.name.lowercased().contains(query.lowercased())
         }
     }
+    
+    func filterChatroomWithChatFrequency() -> [ChatroomInfo] {
+        return chatroomList.reversed()
+    }
 }
