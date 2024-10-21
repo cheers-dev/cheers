@@ -70,6 +70,12 @@ struct ChatroomView: View {
         .padding()
         .fontWeight(.semibold)
         .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .top)
+        .onAppear {
+            Task {
+                let recommendations = await chatroomVM.fetchRecommendations()
+                chatroomVM.recommendations = recommendations
+            }
+        }
     }
     
     var chatMessages: some View {
