@@ -49,6 +49,7 @@ struct KeychainManager {
             kSecValueData as String: token.data(using: .utf8)!
         ]
         
+        SecItemDelete(query as CFDictionary)
         let status = SecItemAdd(query as CFDictionary, nil)
         guard status == errSecSuccess else {
             throw KeychainError.unexpectedStatus(status)
