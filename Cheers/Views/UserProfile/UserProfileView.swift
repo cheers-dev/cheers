@@ -59,7 +59,7 @@ struct UserProfileView: View {
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 20) {
-                    NavigationLink(destination: Text("美食世界盃")) {
+                    NavigationLink(destination: FoodWorldCupView()) {
                         NavigationButtonLabel(
                             systemName: "person.2.fill",
                             label: "美食世界盃"
