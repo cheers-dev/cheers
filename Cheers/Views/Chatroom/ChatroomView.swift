@@ -73,9 +73,9 @@ struct ChatroomView: View {
                     if chatroomVM.hasMore {
                         ProgressView()
                             .padding(.vertical, 8)
-                        .onAppear {
-                            chatroomVM.loadMessages()
-                        }
+                            .onAppear {
+                                chatroomVM.loadMessages()
+                            }
                     }
                     
                     ForEach($chatroomVM.messages, id: \.id) { message in
@@ -89,7 +89,7 @@ struct ChatroomView: View {
                         if let id = chatroomVM.messages.last?.id {
                             withAnimation {
                                 scrollView
-                                    .scrollTo(id, anchor: .bottom)
+                                    .scrollTo(id, anchor: .bottomTrailing)
                             }
                         }
                     }
@@ -100,7 +100,8 @@ struct ChatroomView: View {
             .onReceive(chatroomVM.messages.publisher) { _ in
                 if let lastMessage = chatroomVM.messages.last,
                    lastMessage.id != lastLoadMessage?.id,
-                   lastMessage.userId.uuidString == userId {
+                   lastMessage.userId.uuidString == userId
+                {
                     withAnimation {
                         scrollView
                             .scrollTo(chatroomVM.messages.last?.id, anchor: .bottom)
@@ -119,7 +120,7 @@ struct ChatroomView: View {
                 .clipShape(.capsule)
                 .textFieldStyle(.roundedBorder)
             
-            if(!message.isEmpty) {
+            if !message.isEmpty {
                 Button(action: {
                     chatroomVM.sendMessage(message)
                     message = ""
@@ -132,7 +133,6 @@ struct ChatroomView: View {
         }
         .padding()
         .background(Color(UIColor.systemGray6))
-
     }
 }
 
@@ -140,6 +140,6 @@ struct ChatroomView: View {
     ChatroomView(chatroomVM: ChatroomVM(chatroom: Chatroom(
         id: UUID(uuidString: "E3426695-EE2B-4F46-BD00-D019DE9EA88B")!,
         name: "testing",
-        avatar: nil)
-    ))
+        avatar: nil
+    )))
 }
