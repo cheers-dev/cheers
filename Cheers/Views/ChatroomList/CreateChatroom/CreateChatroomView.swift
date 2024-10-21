@@ -8,83 +8,109 @@
 import PhotosUI
 import SwiftUI
 
+// MARK: - CreateChatroomView
+
 struct CreateChatroomView: View {
-    @State var name = ""
-    @State var intention: Intention = .dailyEating
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var vm: CreateChatroomVM
+    
+    @State var showAddMemberSheet = false
+    @State var showErrorAlert = false
     
     @State var selectedImage: PhotosPickerItem? = nil
     @State var selectedImageData: Data? = nil
     
     var body: some View {
         VStack {
-            HStack {
-                DismissButton()
-                Text("建立聊天室")
-                Spacer()
-                Button(action: {}) {
-                    Text("Create")
-                        .foregroundStyle(.black)
-                }
-            }
-            .padding()
-            .fontWeight(.medium)
-            .frame(maxWidth: .infinity)
-            .background(Color(UIColor.systemGray6) ,ignoresSafeAreaEdges: .top)
-            
-            HStack(spacing: 20) {
-                ZStack(alignment: .bottomTrailing) {
-                    Group {
-                        if let data = selectedImageData,
-                           let uiImage = UIImage(data: data) {
-                            Image(uiImage: uiImage)
-                                .resizable()
-                                .aspectRatio(1, contentMode: .fill)
-                                .scaledToFill()
-                        } else {
-                            Image("icon")
-                                .resizable()
-                        }
+            header
+            chatroomInfo
+            memberList
+            Spacer()
+        }
+        .navigationBarBackButtonHidden()
+        .toolbar(.hidden, for: .tabBar)
+        .sheet(isPresented: $showAddMemberSheet) {
+            NavigationStack {
+                CreateChatroomAddUserSheetView(
+                    members: $vm.state.members,
+                    friends: vm.state.friends.filter { friend in
+                        !vm.state.members.contains { $0.id == friend.id }
                     }
-                    .padding(4)
-                    .frame(width: 50, height: 50)
-                    .background(Color(UIColor.systemGray5))
+                )
+            }
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
+        }
+        .onReceive(vm.$error) { error in
+            if error != nil { showErrorAlert.toggle() }
+        }
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button(action: { showErrorAlert.toggle() }) { Text("OK") }
+        } message: {
+            if vm.error != nil { Text(String(describing: vm.error!)) }
+        }
+    }
+    
+    var header: some View {
+        HStack {
+            DismissButton()
+            Text("建立聊天室")
+            Spacer()
+            Button(action: { Task {
+                let res = await vm.createChatroom()
+                if res { dismiss() }
+            }}) {
+                Text("建立").foregroundStyle(.black)
+            }
+        }
+        .padding()
+        .fontWeight(.medium)
+        .frame(maxWidth: .infinity)
+        .background(Color(UIColor.systemGray6), ignoresSafeAreaEdges: .top)
+    }
+    
+    var chatroomInfo: some View {
+        HStack(spacing: 20) {
+            ZStack(alignment: .bottomTrailing) {
+                Group {
+                    if let data = selectedImageData,
+                       let uiImage = UIImage(data: data)
+                    {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fill)
+                            .scaledToFill()
+                    } else {
+                        Image("icon").resizable()
+                    }
+                }
+                .padding(4)
+                .frame(width: 50, height: 50)
+                .background(Color(UIColor.systemGray5))
+                .clipShape(Circle())
+                
+                PhotosPicker("+", selection: $selectedImage)
+                    .foregroundStyle(.black)
+                    .frame(width: 20, height: 20)
+                    .background(Color(UIColor.systemGray6))
                     .clipShape(Circle())
-                    
-                    PhotosPicker("+", selection: $selectedImage)
-                        .foregroundStyle(.black)
-                        .frame(width: 20, height: 20)
-                        .background(Color(UIColor.systemGray6))
-                        .clipShape(Circle())
-                }
-                
-                TextField("為聊天室命名...", text: $name)
-                    .font(.footnote)
-                    .textFieldStyle(.roundedBorder)
             }
-            .padding()
-            .padding(.horizontal, 40)
             
-            VStack(spacing: 12) {
-                Divider()
-                
-                HStack {
-                    Text("聚會目的")
-                        .foregroundStyle(.gray)
-                    Spacer()
-                    Picker("聚會目的", selection: $intention) {
-                        ForEach(Intention.allCases) { intent in
-                            Text(intent.rawValue).tag(intent)
-                        }
-                    }
-                    .tint(.black)
-                }
-                .padding(.horizontal)
-                
-                VStack(alignment: .leading) {
-                    Text("成員: ")
-                        .font(.footnote)
-                        .padding(.horizontal)
-                    List {
+            TextField("為聊天室命名...", text: $vm.state.name)
+                .font(.footnote)
+                .textFieldStyle(.roundedBorder)
+        }
+        .padding()
+    }
+    
+    var memberList: some View {
+        VStack(spacing: 12) {
+            Divider()
+            
+            VStack(alignment: .leading) {
+                Text("成員: ").font(.footnote)
+                List {
+                    Button(action: { showAddMemberSheet = true }) {
                         HStack(spacing: 12) {
                             Circle()
                                 .stroke(Color(UIColor.systemGray5), lineWidth: 1)
@@ -96,47 +122,28 @@ struct CreateChatroomView: View {
                             Text("新增成員")
                             Spacer()
                         }
-                        
+                    }
+                    
+                    ForEach(vm.state.members) { member in
                         HStack(spacing: 12) {
-                            AsyncImageWithDefaultImage(imageURL: URL(string: ""))
+                            AsyncImageWithDefaultImage(imageURL: member.avatar)
                                 .frame(width: 40, height: 40)
                                 .clipShape(Circle())
                             
-                            Text("User name")
-                        }
-                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            Button(role: .destructive, action: {}) {
-                                Image(systemName: "trash")
-                            }
+                            Text(member.name)
+                        }.swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button(
+                                role: .destructive,
+                                action: { vm.state.members.removeAll { $0.id == member.id } }
+                            ) { Image(systemName: "trash") }
                         }
                     }
-                    .listStyle(.plain)
-                }
-                .frame(maxWidth: .infinity)
-            }
-            .padding()
-
-            Spacer()
-        }
-        .navigationBarBackButtonHidden()
-        .toolbar(.hidden, for: .tabBar)
-    }
-    
-    enum Intention: String, CaseIterable, Identifiable {
-        case dailyEating = "日常吃吃",
-             friendsDining = "朋友聚餐",
-             coupleDating = "情侶約會",
-             familyDining = "家庭聚餐",
-             birth = "慶祝生日",
-             holiday = "慶祝節日",
-             business = "商務用途",
-             treating = "會客宴請",
-             mentorDining = "謝師宴/導生聚"
-        
-        var id: Self { self }
+                }.listStyle(.plain)
+            }.frame(maxWidth: .infinity)
+        }.padding(.horizontal)
     }
 }
 
 #Preview {
-    CreateChatroomView()
+    CreateChatroomView(vm: CreateChatroomVM())
 }

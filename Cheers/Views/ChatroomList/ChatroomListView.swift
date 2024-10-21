@@ -56,7 +56,9 @@ struct ChatroomListView: View {
         .navigationTitle("聊天室")
         .toolbarBackground(Color(UIColor.systemGray6), for: .navigationBar)
         .toolbar {
-            NavigationLink(destination: CreateChatroomView()) {
+            NavigationLink(
+                destination: CreateChatroomView(vm: CreateChatroomVM())
+            ) {
                 Image(systemName: "ellipsis.message.fill")
                     .foregroundStyle(.black)
             }
