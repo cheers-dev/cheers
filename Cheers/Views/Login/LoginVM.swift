@@ -18,6 +18,7 @@ final class LoginVM: ObservableObject {
         }
     }
     
+    @MainActor
     func login() async throws {
         do {
             guard let endpointURLText = Bundle.main.infoDictionary?["GATEWAY_URL"] as? String,
