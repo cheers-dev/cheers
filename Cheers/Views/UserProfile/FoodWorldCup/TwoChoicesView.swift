@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct TwoChoicesView: View {
-    @State private var foods = ["中式", "甜點", "日式", "美式", "越式", "義式", "韓式", "港式", "泰式", "法式", "西式", "東南亞", "異國料理", "酒吧"]
-    @State private var rankings: [String] = []
-    @State private var currentFood: String = ""
-    @State private var comparisonIndex: Int = 0
-    @State private var showResult = false
+    @ObservedObject var viewModel = TwoChoicesVM()
     
     private let foodImages: [String: String] = [
         "中式": "chinese", "甜點": "dessert", "日式": "japanese", "美式": "american",
@@ -22,7 +18,7 @@ struct TwoChoicesView: View {
 
     var body: some View {
         VStack(spacing: 50) {
-            if showResult {
+            if viewModel.showResult {
                 VStack(spacing: 30) {
                     Text("結果出爐！")
                         .font(.title)
@@ -31,57 +27,25 @@ struct TwoChoicesView: View {
                         .font(.headline)
                         .foregroundColor(.gray)
                     HStack(alignment: .bottom, spacing: 10) {
-                        VStack {
-                            Image(foodImages[rankings[1]]!)
-                                .resizable()
-                                .frame(width: 80, height: 130)
-                                .clipShape(Circle())
-                            Text("2")
-                                .font(.system(size: 30))
-                                .bold()
-                                .foregroundColor(.black)
-                            Text(rankings[1])
-                                .font(.headline)
-                            Spacer()
-                                .frame(height: 30)
+                        ForEach([1, 0, 2], id: \.self) { index in
+                            VStack {
+                                Image(foodImages[viewModel.rankings[index]]!)
+                                    .resizable()
+                                    .frame(width: 80 + CGFloat(20 * (2 - index)), height: 130 + CGFloat(20 * (2 - index)))
+                                    .clipShape(Circle())
+                                Text("\(index + 1)")
+                                    .font(.system(size: 30))
+                                    .bold()
+                                    .foregroundColor(.black)
+                                Text(viewModel.rankings[index])
+                                    .font(.headline)
+                                Spacer()
+                                    .frame(height: CGFloat(30 - 10 * index))
+                            }
+                            .frame(width: 100 + CGFloat(20 * (2 - index)), height: 200 + CGFloat(20 * (2 - index)))
+                            .background(index == 1 ? Color.yellow : (index == 2 ? Color.red : Color.gray))
+                            .cornerRadius(10)
                         }
-                        .frame(width: 100, height: 200)
-                        .background(Color.gray)
-                        .cornerRadius(10)
-                        
-                        VStack {
-                            Image(foodImages[rankings[0]]!)
-                                .resizable()
-                                .frame(width: 100, height: 150)
-                                .clipShape(Circle())
-                            Text("1")
-                                .font(.system(size: 30))
-                                .bold()
-                                .foregroundColor(.black)
-                            Text(rankings[0])
-                                .font(.headline)
-                        }
-                        .frame(width: 120, height: 240)
-                        .background(Color.yellow)
-                        .cornerRadius(10)
-                        
-                        VStack {
-                            Image(foodImages[rankings[2]]!)
-                                .resizable()
-                                .frame(width: 80, height: 110)
-                                .clipShape(Circle())
-                            Text("3")
-                                .font(.system(size: 30))
-                                .bold()
-                                .foregroundColor(.black)
-                            Text(rankings[2])
-                                .font(.headline)
-                            Spacer()
-                                .frame(height: 20)
-                        }
-                        .frame(width: 100, height: 180)
-                        .background(Color.red)
-                        .cornerRadius(10)
                     }
                 }
             } else {
@@ -97,18 +61,18 @@ struct TwoChoicesView: View {
                         .cornerRadius(12)
                 }
                 
-                if comparisonIndex < rankings.count && !currentFood.isEmpty {
+                if viewModel.comparisonIndex < viewModel.rankings.count && !viewModel.currentFood.isEmpty {
                     HStack(spacing: 0) {
-                        if let imageName = foodImages[rankings[comparisonIndex]] {
+                        if let imageName = foodImages[viewModel.rankings[viewModel.comparisonIndex]] {
                             VStack {
                                 Image(imageName)
                                     .resizable()
                                     .frame(width: 200, height: 230)
                                     .cornerRadius(5)
                                 Button(action: {
-                                    makeChoice(0)
+                                    viewModel.makeChoice(0)
                                 }) {
-                                    Text(rankings[comparisonIndex])
+                                    Text(viewModel.rankings[viewModel.comparisonIndex])
                                         .font(.headline)
                                         .foregroundColor(.white)
                                         .frame(width: 100, height: 44)
@@ -118,16 +82,16 @@ struct TwoChoicesView: View {
                             }
                         }
 
-                        if let imageName = foodImages[currentFood] {
+                        if let imageName = foodImages[viewModel.currentFood] {
                             VStack {
                                 Image(imageName)
                                     .resizable()
                                     .frame(width: 200, height: 230)
                                     .cornerRadius(5)
                                 Button(action: {
-                                    makeChoice(1)
+                                    viewModel.makeChoice(1)
                                 }) {
-                                    Text(currentFood)
+                                    Text(viewModel.currentFood)
                                         .font(.headline)
                                         .foregroundColor(.white)
                                         .frame(width: 100, height: 44)
@@ -155,38 +119,7 @@ struct TwoChoicesView: View {
         }
         .padding()
         .onAppear {
-            startComparison()
-        }
-    }
-
-    func startComparison() {
-        if foods.count > 1 {
-            rankings = [foods[0]]
-            currentFood = foods[1]
-            comparisonIndex = 0
-        }
-    }
-
-    func makeChoice(_ preferredIndex: Int) {
-        if preferredIndex == 0 {
-            comparisonIndex += 1
-            if comparisonIndex >= rankings.count {
-                rankings.append(currentFood)
-                if rankings.count < foods.count {
-                    currentFood = foods[rankings.count]
-                    comparisonIndex = 0
-                }
-            }
-        } else {
-            rankings.insert(currentFood, at: comparisonIndex)
-            if rankings.count < foods.count {
-                currentFood = foods[rankings.count]
-                comparisonIndex = 0
-            }
-        }
-
-        if rankings.count == foods.count {
-            showResult = true
+            viewModel.startComparison()
         }
     }
 }
