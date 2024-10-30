@@ -12,13 +12,14 @@ final class ChatroomSettingsVM: ObservableObject {
     @Published var friends = [User]()
     @Published var error: Error?
     
-    func getFriends() {
+    func loadFriends() {
         Task {
             await fetchFriends()
         }
     }
     
-    func getMembers() async {
+    // TODO: - implement this func in future
+    func loadMembers() async {
         do {
             let membersData = try await RequestWithAccessToken.send(
                 "",

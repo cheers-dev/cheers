@@ -106,7 +106,7 @@ struct ChatroomSettingsView: View {
     }
     
     var inviteSheet: some View {
-        viewModel.getFriends()
+        viewModel.loadFriends()
         return NavigationView {
             List($viewModel.friends) { $friend in
                 HStack {
