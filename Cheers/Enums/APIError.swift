@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum APIError: Error {
+enum APIError: Error, CustomStringConvertible {
     case invalidURL
     case responseError
     case invalidData
     case custom(String)
     case unknown(String)
-    
-    func description() -> String {
+
+    public var description: String {
         switch self {
             case .invalidURL:
                 "API endpoint isn't a valid URL."
