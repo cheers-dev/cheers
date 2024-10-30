@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+// MARK: - Constants
+
+private enum Constants {
+    static let messagePadding: CGFloat = 12
+    static let cornerRadius: CGFloat = 24
+}
+
+// MARK: - MessageView
+
 struct MessageView: View {
     @Binding var message: Message
     @State var isSender: Bool
@@ -16,14 +25,14 @@ struct MessageView: View {
             if isSender { Spacer() }
 
             Text(message.content)
-                .padding(12)
+                .padding(Constants.messagePadding)
                 .foregroundStyle(isSender ? .white : .primary)
                 .background(isSender ? .blue : .init(uiColor: .systemGray5))
-                .clipShape(RoundedRectangle(cornerRadius: 24, style: .circular))
+                .clipShape(RoundedRectangle(cornerRadius: Constants.cornerRadius, style: .circular))
 
             if !isSender { Spacer() }
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, Constants.messagePadding)
         .frame(maxWidth: .infinity)
     }
 }
