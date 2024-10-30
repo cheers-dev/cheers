@@ -11,7 +11,7 @@ struct FriendsListView: View {
     @ObservedObject var friendsListVM: FriendsListVM
     @State var search = ""
     @State var showErrorAlert = false
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -30,8 +30,8 @@ struct FriendsListView: View {
                             .fontWeight(.medium)
                     }
                 }
-                
-                NavigationLink(destination: GroupsListView()) {
+
+                NavigationLink(destination: GroupsListView(vm: GroupsListVM())) {
                     HStack(spacing: 12) {
                         Circle()
                             .stroke(Color(UIColor.systemGray4))
@@ -44,7 +44,7 @@ struct FriendsListView: View {
                             .fontWeight(.medium)
                     }
                 }
-                
+
                 ForEach($friendsListVM.friends) { friend in
                     NavigationLink(destination: Text("User Analysis")) {
                         UserAvatarWithName(user: friend)
