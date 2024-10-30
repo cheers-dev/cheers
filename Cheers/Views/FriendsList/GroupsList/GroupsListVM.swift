@@ -18,7 +18,7 @@ struct GroupsListState {
 
 final class GroupsListVM: ObservableObject {
     @Published var state: GroupsListState
-    @Published var error: Error? = nil
+    @Published var error: Error?
 
     init() {
         self.state = .init()
