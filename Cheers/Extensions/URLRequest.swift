@@ -8,9 +8,9 @@
 import Foundation
 extension URLRequest {
     mutating func setBasicAuth(username: String, password: String) {
-        let encodedAuthInfo = String(format: "%@:%@", username, password)
-            .data(using: .utf8)!
-            .base64EncodedString()
+        guard let authData = "\(username):\(password)".data(using: .utf8)
+        else { return }
+        let encodedAuthInfo = authData.base64EncodedString()
         
         addValue("Basic \(encodedAuthInfo)", forHTTPHeaderField: "Authorization")
     }
