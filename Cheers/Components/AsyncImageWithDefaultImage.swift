@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AsyncImageWithDefaultImage: View {
     let imageURL: URL?
-    
+
     var body: some View {
         AsyncImage(url: imageURL) { phase in
             switch phase {
@@ -18,6 +18,10 @@ struct AsyncImageWithDefaultImage: View {
                         .resizable()
                         .aspectRatio(1, contentMode: .fill)
                         .scaledToFill()
+
+                case .empty:
+                    ProgressView()
+
                 default:
                     Image("icon")
                         .resizable()
