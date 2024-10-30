@@ -18,7 +18,7 @@ private enum Constants {
 
 struct MessageView: View {
     @Binding var message: Message
-    @State var isSender: Bool
+    var isSender: Bool
 
     var body: some View {
         HStack {
@@ -41,4 +41,5 @@ struct MessageView: View {
 #Preview {
     @Previewable @State var message = Message(id: UUID(), userId: UUID(), content: "Hello, World!", createdAt: nil)
     MessageView(message: $message, isSender: true)
+    MessageView(message: $message, isSender: false)
 }
