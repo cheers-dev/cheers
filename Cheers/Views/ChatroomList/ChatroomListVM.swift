@@ -11,12 +11,15 @@ final class ChatroomListVM: ObservableObject {
     @Published var chatroomList: [ChatroomInfo] = []
     @Published var error: Error?
     
-    init() {
-        loadChatroomList()
-    }
+    private var loadingTask: Task<Void, Never>?
+    
+    init() { loadChatroomList() }
+    
+    deinit { loadingTask?.cancel() }
     
     func loadChatroomList() {
-        Task {
+        loadingTask?.cancel()
+        loadingTask = Task {
             await fetchChatroomList()
         }
     }
