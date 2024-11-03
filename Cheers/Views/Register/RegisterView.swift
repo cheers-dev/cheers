@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @ObservedObject var register: RegisterVM
     @State var showErrorAlert = false
+    @State private var isSubmitting = false
 
     var body: some View {
         VStack(spacing: 40) {
@@ -34,14 +35,17 @@ struct RegisterView: View {
                 )
                 .padding(.leading, 12)
                 .foregroundStyle(.gray)
-                Button(action: { register.submit() }) {
+                Button(action: {
+                    isSubmitting = true
+                    register.submit()
+                }) {
                     Text("註冊")
                         .padding(12)
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .background(.black)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
-                }
+                }.disabled(isSubmitting)
             }
             HStack {
                 Text("已經有帳號了？")
@@ -55,13 +59,16 @@ struct RegisterView: View {
         .scrollDismissesKeyboard(.automatic)
         .font(.system(size: 14))
         .padding()
-        .onReceive(register.$error){ error in
+        .onReceive(register.$error) { error in
             if error != nil {
                 showErrorAlert.toggle()
             }
         }
         .alert("Error", isPresented: $showErrorAlert) {
-            Button(action: { showErrorAlert.toggle() }) {
+            Button(action: {
+                showErrorAlert.toggle()
+                isSubmitting = false
+            }) {
                 Text("OK")
             }
         } message: {
