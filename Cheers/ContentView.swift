@@ -11,10 +11,8 @@ struct ContentView: View {
     @AppStorage("accessTokenFound") var accessTokenFound = false
 
     var body: some View {
-        Group {
-            if accessTokenFound { tabView }
-            else { LoginView(login: LoginVM()) }
-        }
+        if accessTokenFound { tabView }
+        else { LoginView(login: LoginVM()) }
     }
 
     var tabView: some View {
