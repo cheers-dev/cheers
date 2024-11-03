@@ -31,8 +31,18 @@ final class CreateChatroomVM: ObservableObject {
     }
 
     func createChatroom() async -> Bool {
+        guard !self.state.name.isEmpty else {
+            self.error = APIError.custom("chatroom should not be empty")
+            return false
+        }
+
+        guard self.state.members.count < 2 else {
+            self.error = APIError.custom("chatroom member should not be empty")
+            return false
+        }
+
         do {
-            let body = Chatroom.Create(
+            let body = try Chatroom.Create(
                 id: UUID(),
                 name: self.state.name,
                 userIds: self.state.members.map { $0.id }
@@ -41,8 +51,7 @@ final class CreateChatroomVM: ObservableObject {
 
             let chatroom: Chatroom = try await RequestWithAccessToken
                 .send("chat/createChatroom", methodType: .POST, data: data)
-            
-            print(chatroom)
+
             return true
         } catch {
             self.error = error
