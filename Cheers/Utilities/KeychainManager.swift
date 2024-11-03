@@ -11,14 +11,20 @@ enum KeychainManager {
     static let tag = "dev.dongdong867.cheers.tokens"
     
     static func saveToken(_ token: String, as name: String) throws {
+        guard let tokenData = token.data(using: .utf8)
+        else { throw KeychainError.invalidData }
+        
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: name,
             kSecAttrAccount as String: tag,
-            kSecValueData as String: token.data(using: .utf8)!
+            kSecValueData as String: tokenData
         ]
         
-        SecItemDelete(query as CFDictionary)
+        let deleteStatus = SecItemDelete(query as CFDictionary)
+        guard deleteStatus == errSecSuccess || deleteStatus == errSecItemNotFound
+        else { throw KeychainError.unexpectedStatus(deleteStatus) }
+        
         let status = SecItemAdd(query as CFDictionary, nil)
         guard status == errSecSuccess else {
             throw KeychainError.unexpectedStatus(status)

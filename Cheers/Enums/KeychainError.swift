@@ -9,6 +9,7 @@ import Foundation
 
 enum KeychainError: Error {
     case itemNotFound
+    case invalidData
     case duplicateItem
     case unexpectedStatus(OSStatus)
 }
