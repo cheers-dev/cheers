@@ -13,13 +13,16 @@ final class FriendInvitationsVM: ObservableObject {
     
     private var loadingTask: Task<Void, Never>?
     
-    init() {
-        Task { @MainActor in
+    init() { loadFriendInvitations() }
+    
+    deinit { loadingTask?.cancel() }
+    
+    func loadFriendInvitations() {
+        loadingTask?.cancel()
+        loadingTask = Task {
             await self.fetchFriendInvitations()
         }
     }
-    
-    deinit { loadingTask?.cancel() }
     
     func acceptInvitation(_ id: UUID) async {
         await handleInvitation(id, action: "accept")
