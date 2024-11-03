@@ -22,13 +22,18 @@ final class CreateChatroomVM: ObservableObject {
     @Published var state: CreateChatroomState
     @Published var error: Error? = nil
 
+    private var loadingTask: Task<Void, Error>?
+
     init() {
         self.state = CreateChatroomState()
         self.getFriends()
     }
 
+    deinit { loadingTask?.cancel() }
+
     func getFriends() {
-        Task { await self.fetchFriends() }
+        self.loadingTask?.cancel()
+        self.loadingTask = Task { await self.fetchFriends() }
     }
 
     func createChatroom() async -> Bool {
