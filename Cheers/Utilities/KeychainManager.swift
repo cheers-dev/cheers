@@ -7,38 +7,7 @@
 
 import Foundation
 
-//func setAccessToken(_ token: String) throws {
-//    let tag = (Bundle.main.infoDictionary?["BASE_APPLICATION_TAG"] as? String)!.data(using: .utf8)!
-//    let query: [String: Any] = [
-//        kSecClass as String: kSecClassKey,
-//        kSecAttrApplicationTag as String: tag,
-//        kSecValueData as String: token.data(using: .utf8)!
-//    ]
-//    
-//    let status = SecItemAdd(query as CFDictionary, nil)
-//    guard status == errSecSuccess else { throw AccessTokenError.storingError}
-//}
-//
-//func getAccessToken() -> String? {
-//    let tag = (Bundle.main.infoDictionary?["BASE_APPLICATION_TAG"] as? String)!.data(using: .utf8)!
-//    let getQuery: [String: Any] = [
-//        kSecClass as String: kSecClassKey,
-//        kSecAttrApplicationTag as String: tag,
-//        kSecReturnData as String: true
-//    ]
-//    
-//    var accessTokenData: AnyObject?
-//    let status = SecItemCopyMatching(getQuery as CFDictionary, &accessTokenData)
-//    
-//    guard let accessToken = accessTokenData as? Data
-//    else {
-//        return nil
-//    }
-//            
-//    return String(data: accessToken, encoding: .utf8)
-//}
-
-struct KeychainManager {
+enum KeychainManager {
     static let tag = "dev.dongdong867.cheers.tokens"
     
     static func saveToken(_ token: String, as name: String) throws {
