@@ -15,35 +15,13 @@ struct FriendsListView: View {
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink(
-                    destination: FriendInvitationsView(friendInvitationVM: FriendInvitationsVM())
-                ) {
-                    HStack(spacing: 12) {
-                        Circle()
-                            .stroke(Color(UIColor.systemGray4))
-                            .frame(width: 50, height: 50)
-                            .overlay {
-                                Image(systemName: "plus")
-                                    .font(.title2)
-                            }
-                        Text("好友申請")
-                            .fontWeight(.medium)
-                    }
-                }
+                navigationCard(destination: FriendInvitationsView(friendInvitationVM: FriendInvitationsVM()),
+                               icon: "plus",
+                               label: "好友申請")
 
-                NavigationLink(destination: GroupsListView(vm: GroupsListVM())) {
-                    HStack(spacing: 12) {
-                        Circle()
-                            .stroke(Color(UIColor.systemGray4))
-                            .frame(width: 50, height: 50)
-                            .overlay {
-                                Image(systemName: "person.2.fill")
-                                    .font(.title2)
-                            }
-                        Text("Groups")
-                            .fontWeight(.medium)
-                    }
-                }
+                navigationCard(destination: GroupsListView(vm: GroupsListVM()),
+                               icon: "person.2.fill",
+                               label: "Groups")
 
                 ForEach($friendsListVM.friends) { friend in
                     NavigationLink(destination: Text("User Analysis")) {
@@ -67,6 +45,22 @@ struct FriendsListView: View {
                 if friendsListVM.error != nil {
                     Text(String(describing: friendsListVM.error!))
                 }
+            }
+        }
+    }
+
+    func navigationCard(destination: some View, icon: String, label: String) -> some View {
+        NavigationLink(destination: destination) {
+            HStack(spacing: 12) {
+                Circle()
+                    .stroke(Color(UIColor.systemGray4))
+                    .frame(width: 50, height: 50)
+                    .overlay {
+                        Image(systemName: icon)
+                            .font(.title2)
+                    }
+                Text(label)
+                    .fontWeight(.medium)
             }
         }
     }
