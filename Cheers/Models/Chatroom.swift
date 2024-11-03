@@ -25,14 +25,14 @@ extension Chatroom {
         let avatar: URL?
 
         init(id: UUID, name: String, userIds: [UUID], avatar: URL? = nil) throws {
-            guard !name
-                .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
-                userIds.count > 2 &&
-                Set(userIds).count == userIds.count
+            let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard trimmedName.isEmpty
+                && userIds.count > 2
+                && Set(userIds).count == userIds.count
             else { throw APIError.invalidData }
 
             self.id = id
-            self.name = name
+            self.name = trimmedName
             self.avatar = avatar
             self.userIds = userIds
         }
