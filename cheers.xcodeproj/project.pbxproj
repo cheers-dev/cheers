@@ -7,13 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F55ED6182BA8916E00D715C8 /* cheersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6172BA8916E00D715C8 /* cheersApp.swift */; };
+		F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8AE2BAA805600638472 /* FriendsListView.swift */; };
+		F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B02BAA806300638472 /* FriendsListVM.swift */; };
+		F510F8B52BAA853900638472 /* GroupsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B42BAA853900638472 /* GroupsListVM.swift */; };
+		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
+		F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B92BAA8DFF00638472 /* UINavigationController.swift */; };
+		F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F510F8BC2BAA923E00638472 /* CodeScanner */; };
+		F510F8C02BAA941300638472 /* FriendInvitationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */; };
+		F510F8C22BAA941C00638472 /* FriendInvitationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */; };
+		F510F8C52BAAA22E00638472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C42BAAA22E00638472 /* User.swift */; };
+		F510F8C92BABDEB400638472 /* ChatroomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C82BABDEB400638472 /* ChatroomInfo.swift */; };
+		F510F8CB2BABE1E900638472 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CA2BABE1E900638472 /* Message.swift */; };
+		F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CC2BAC479200638472 /* Chatroom.swift */; };
+		F52514122C4C513000FF2916 /* FriendInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52514112C4C513000FF2916 /* FriendInvitation.swift */; };
+		F53F0D092BF7A76100F3DBD1 /* SocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */; };
+		F53F0D0E2BF9240100F3DBD1 /* SocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */; };
+		F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53F0D0F2C05150200F3DBD1 /* MessageView.swift */; };
+		F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6172BA8916E00D715C8 /* CheersApp.swift */; };
 		F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6192BA8916E00D715C8 /* ContentView.swift */; };
 		F55ED61C2BA8916F00D715C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55ED61B2BA8916F00D715C8 /* Assets.xcassets */; };
 		F55ED61F2BA8916F00D715C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55ED61E2BA8916F00D715C8 /* Preview Assets.xcassets */; };
-		F55ED6292BA8916F00D715C8 /* cheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6282BA8916F00D715C8 /* cheersTests.swift */; };
-		F55ED6332BA8916F00D715C8 /* cheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6322BA8916F00D715C8 /* cheersUITests.swift */; };
-		F55ED6352BA8916F00D715C8 /* cheersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6342BA8916F00D715C8 /* cheersUITestsLaunchTests.swift */; };
+		F55ED6292BA8916F00D715C8 /* CheersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6282BA8916F00D715C8 /* CheersTests.swift */; };
+		F55ED6332BA8916F00D715C8 /* CheersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6322BA8916F00D715C8 /* CheersUITests.swift */; };
+		F55ED6352BA8916F00D715C8 /* CheersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6342BA8916F00D715C8 /* CheersUITestsLaunchTests.swift */; };
+		F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6442BA8988A00D715C8 /* LoginView.swift */; };
+		F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6462BA898B200D715C8 /* LoginVM.swift */; };
+		F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */; };
+		F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */; };
+		F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */; };
+		F55ED6522BA8B97800D715C8 /* ChatroomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6512BA8B97800D715C8 /* ChatroomListView.swift */; };
+		F55ED6542BA8B98100D715C8 /* ChatroomListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6532BA8B98100D715C8 /* ChatroomListVM.swift */; };
+		F55ED6562BA8C08000D715C8 /* ChatroomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6552BA8C08000D715C8 /* ChatroomCardView.swift */; };
+		F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */; };
+		F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */; };
+		F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */; };
+		F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED65F2BA95B5600D715C8 /* ChatroomSettingsVM.swift */; };
+		F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */; };
+		F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */; };
+		F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */; };
+		F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */; };
+		F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED66D2BAA08B500D715C8 /* DismissButton.swift */; };
+		F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */; };
+		F57EC2322BEFF9030041261D /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = F57EC2312BEFF9030041261D /* SocketIO */; };
+		F58D6DE72C556CF9005A35B0 /* DateStringDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58D6DE62C556CF9005A35B0 /* DateStringDecoder.swift */; };
+		F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */; };
+		F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8784F2BBC5970002EA092 /* NSMutableData.swift */; };
+		F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878562BBDD1B6002EA092 /* APIError.swift */; };
+		F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A878592BBEF844002EA092 /* HashPassword.swift */; };
+		F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785B2BBF581F002EA092 /* KeychainManager.swift */; };
+		F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */; };
+		F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8785F2BC051B1002EA092 /* URLRequest.swift */; };
+		F5BF08CE2CB8F201009DFA87 /* CreateChatroomAddUserSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF08CD2CB8F201009DFA87 /* CreateChatroomAddUserSheetView.swift */; };
+		F5C05F5B2C4D8ECD0006897E /* RequestWithAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C05F5A2C4D8ECD0006897E /* RequestWithAccessToken.swift */; };
+		F5DF38E82C4701E100E957E8 /* UserAvatarWithName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DF38E72C4701E100E957E8 /* UserAvatarWithName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +80,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F510F8AE2BAA805600638472 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		F510F8B02BAA806300638472 /* FriendsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListVM.swift; sourceTree = "<group>"; };
+		F510F8B42BAA853900638472 /* GroupsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListVM.swift; sourceTree = "<group>"; };
+		F510F8B62BAA855400638472 /* GroupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListView.swift; sourceTree = "<group>"; };
+		F510F8B92BAA8DFF00638472 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitationsVM.swift; sourceTree = "<group>"; };
+		F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitationsView.swift; sourceTree = "<group>"; };
+		F510F8C32BAA9E4600638472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = cheers/Info.plist; sourceTree = "<group>"; };
+		F510F8C42BAAA22E00638472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F510F8C82BABDEB400638472 /* ChatroomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomInfo.swift; sourceTree = "<group>"; };
+		F510F8CA2BABE1E900638472 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F510F8CC2BAC479200638472 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
+		F52514112C4C513000FF2916 /* FriendInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitation.swift; sourceTree = "<group>"; };
+		F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketClient.swift; sourceTree = "<group>"; };
+		F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketError.swift; sourceTree = "<group>"; };
+		F53F0D0F2C05150200F3DBD1 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		F55ED6142BA8916E00D715C8 /* cheers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55ED6172BA8916E00D715C8 /* cheersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheersApp.swift; sourceTree = "<group>"; };
+		F55ED6172BA8916E00D715C8 /* CheersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersApp.swift; sourceTree = "<group>"; };
 		F55ED6192BA8916E00D715C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F55ED61B2BA8916F00D715C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F55ED61E2BA8916F00D715C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F55ED6242BA8916F00D715C8 /* cheersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55ED6282BA8916F00D715C8 /* cheersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheersTests.swift; sourceTree = "<group>"; };
+		F55ED6282BA8916F00D715C8 /* CheersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersTests.swift; sourceTree = "<group>"; };
 		F55ED62E2BA8916F00D715C8 /* cheersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55ED6322BA8916F00D715C8 /* cheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheersUITests.swift; sourceTree = "<group>"; };
-		F55ED6342BA8916F00D715C8 /* cheersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F55ED6322BA8916F00D715C8 /* CheersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITests.swift; sourceTree = "<group>"; };
+		F55ED6342BA8916F00D715C8 /* CheersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F55ED6442BA8988A00D715C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F55ED6462BA898B200D715C8 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayTextField.swift; sourceTree = "<group>"; };
+		F55ED6512BA8B97800D715C8 /* ChatroomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListView.swift; sourceTree = "<group>"; };
+		F55ED6532BA8B98100D715C8 /* ChatroomListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListVM.swift; sourceTree = "<group>"; };
+		F55ED6552BA8C08000D715C8 /* ChatroomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomCardView.swift; sourceTree = "<group>"; };
+		F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomView.swift; sourceTree = "<group>"; };
+		F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomVM.swift; sourceTree = "<group>"; };
+		F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsView.swift; sourceTree = "<group>"; };
+		F55ED65F2BA95B5600D715C8 /* ChatroomSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomSettingsVM.swift; sourceTree = "<group>"; };
+		F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonLabel.swift; sourceTree = "<group>"; };
+		F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomView.swift; sourceTree = "<group>"; };
+		F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomVM.swift; sourceTree = "<group>"; };
+		F55ED66D2BAA08B500D715C8 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageWithDefaultImage.swift; sourceTree = "<group>"; };
+		F58D6DE62C556CF9005A35B0 /* DateStringDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringDecoder.swift; sourceTree = "<group>"; };
+		F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormDataRequest.swift; sourceTree = "<group>"; };
+		F5A8784F2BBC5970002EA092 /* NSMutableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableData.swift; sourceTree = "<group>"; };
+		F5A878532BBDC9DE002EA092 /* dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = dev.xcconfig; sourceTree = "<group>"; };
+		F5A878562BBDD1B6002EA092 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F5A878592BBEF844002EA092 /* HashPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashPassword.swift; sourceTree = "<group>"; };
+		F5A8785B2BBF581F002EA092 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		F5A8785F2BC051B1002EA092 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		F5BF08CD2CB8F201009DFA87 /* CreateChatroomAddUserSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatroomAddUserSheetView.swift; sourceTree = "<group>"; };
+		F5C05F5A2C4D8ECD0006897E /* RequestWithAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWithAccessToken.swift; sourceTree = "<group>"; };
+		F5DF38E72C4701E100E957E8 /* UserAvatarWithName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarWithName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */,
+				F57EC2322BEFF9030041261D /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,12 +165,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F510F8AD2BAA803400638472 /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8BE2BAA93F100638472 /* FriendInvitations */,
+				F510F8B32BAA852900638472 /* GroupsList */,
+				F510F8AE2BAA805600638472 /* FriendsListView.swift */,
+				F510F8B02BAA806300638472 /* FriendsListVM.swift */,
+				F5DF38E72C4701E100E957E8 /* UserAvatarWithName.swift */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		F510F8B32BAA852900638472 /* GroupsList */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8B42BAA853900638472 /* GroupsListVM.swift */,
+				F510F8B62BAA855400638472 /* GroupsListView.swift */,
+			);
+			path = GroupsList;
+			sourceTree = "<group>";
+		};
+		F510F8B82BAA8DE700638472 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8B92BAA8DFF00638472 /* UINavigationController.swift */,
+				F5A8784F2BBC5970002EA092 /* NSMutableData.swift */,
+				F5A8785F2BC051B1002EA092 /* URLRequest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F510F8BE2BAA93F100638472 /* FriendInvitations */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */,
+				F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */,
+			);
+			path = FriendInvitations;
+			sourceTree = "<group>";
+		};
 		F55ED60B2BA8916E00D715C8 = {
 			isa = PBXGroup;
 			children = (
-				F55ED6162BA8916E00D715C8 /* cheers */,
-				F55ED6272BA8916F00D715C8 /* cheersTests */,
-				F55ED6312BA8916F00D715C8 /* cheersUITests */,
+				F510F8C32BAA9E4600638472 /* Info.plist */,
+				F5A878542BBDCC1C002EA092 /* Configs */,
+				F55ED6162BA8916E00D715C8 /* Cheers */,
+				F55ED6272BA8916F00D715C8 /* CheersTests */,
+				F55ED6312BA8916F00D715C8 /* CheersUITests */,
 				F55ED6152BA8916E00D715C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,15 +227,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F55ED6162BA8916E00D715C8 /* cheers */ = {
+		F55ED6162BA8916E00D715C8 /* Cheers */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED6172BA8916E00D715C8 /* cheersApp.swift */,
+				F5A878582BBEF819002EA092 /* Utilities */,
+				F5A878552BBDD18F002EA092 /* Enums */,
+				F510F8B82BAA8DE700638472 /* Extensions */,
+				F55ED64D2BA8A21300D715C8 /* Components */,
+				F55ED6422BA8980900D715C8 /* Views */,
+				F55ED6412BA8980300D715C8 /* Models */,
+				F55ED6172BA8916E00D715C8 /* CheersApp.swift */,
 				F55ED6192BA8916E00D715C8 /* ContentView.swift */,
 				F55ED61B2BA8916F00D715C8 /* Assets.xcassets */,
 				F55ED61D2BA8916F00D715C8 /* Preview Content */,
 			);
-			path = cheers;
+			path = Cheers;
 			sourceTree = "<group>";
 		};
 		F55ED61D2BA8916F00D715C8 /* Preview Content */ = {
@@ -110,21 +252,155 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F55ED6272BA8916F00D715C8 /* cheersTests */ = {
+		F55ED6272BA8916F00D715C8 /* CheersTests */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED6282BA8916F00D715C8 /* cheersTests.swift */,
+				F55ED6282BA8916F00D715C8 /* CheersTests.swift */,
 			);
-			path = cheersTests;
+			path = CheersTests;
 			sourceTree = "<group>";
 		};
-		F55ED6312BA8916F00D715C8 /* cheersUITests */ = {
+		F55ED6312BA8916F00D715C8 /* CheersUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F55ED6322BA8916F00D715C8 /* cheersUITests.swift */,
-				F55ED6342BA8916F00D715C8 /* cheersUITestsLaunchTests.swift */,
+				F55ED6322BA8916F00D715C8 /* CheersUITests.swift */,
+				F55ED6342BA8916F00D715C8 /* CheersUITestsLaunchTests.swift */,
 			);
-			path = cheersUITests;
+			path = CheersUITests;
+			sourceTree = "<group>";
+		};
+		F55ED6412BA8980300D715C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8C42BAAA22E00638472 /* User.swift */,
+				F510F8C82BABDEB400638472 /* ChatroomInfo.swift */,
+				F510F8CA2BABE1E900638472 /* Message.swift */,
+				F510F8CC2BAC479200638472 /* Chatroom.swift */,
+				F5A8784D2BBC589D002EA092 /* MultipartFormDataRequest.swift */,
+				F52514112C4C513000FF2916 /* FriendInvitation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F55ED6422BA8980900D715C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F510F8AD2BAA803400638472 /* FriendsList */,
+				F55ED6612BA99B2800D715C8 /* UserProfile */,
+				F55ED6572BA8CC7800D715C8 /* Chatroom */,
+				F55ED6502BA8B96B00D715C8 /* ChatroomList */,
+				F55ED6482BA8A07E00D715C8 /* Register */,
+				F55ED6432BA8985E00D715C8 /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F55ED6432BA8985E00D715C8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6442BA8988A00D715C8 /* LoginView.swift */,
+				F55ED6462BA898B200D715C8 /* LoginVM.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F55ED6482BA8A07E00D715C8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6492BA8A08F00D715C8 /* RegisterVM.swift */,
+				F55ED64B2BA8A0B300D715C8 /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F55ED64D2BA8A21300D715C8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED64E2BA8A2E900D715C8 /* GrayTextField.swift */,
+				F55ED6662BA9F31D00D715C8 /* NavigationButtonLabel.swift */,
+				F55ED66D2BAA08B500D715C8 /* DismissButton.swift */,
+				F55ED6712BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F55ED6502BA8B96B00D715C8 /* ChatroomList */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6682BAA07C300D715C8 /* CreateChatroom */,
+				F55ED6532BA8B98100D715C8 /* ChatroomListVM.swift */,
+				F55ED6512BA8B97800D715C8 /* ChatroomListView.swift */,
+				F55ED6552BA8C08000D715C8 /* ChatroomCardView.swift */,
+			);
+			path = ChatroomList;
+			sourceTree = "<group>";
+		};
+		F55ED6572BA8CC7800D715C8 /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED65C2BA95B1600D715C8 /* Settings */,
+				F55ED6582BA8CC9500D715C8 /* ChatroomView.swift */,
+				F55ED65A2BA8CC9C00D715C8 /* ChatroomVM.swift */,
+				F53F0D0F2C05150200F3DBD1 /* MessageView.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		F55ED65C2BA95B1600D715C8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED65D2BA95B4200D715C8 /* ChatroomSettingsView.swift */,
+				F55ED65F2BA95B5600D715C8 /* ChatroomSettingsVM.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F55ED6612BA99B2800D715C8 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		F55ED6682BAA07C300D715C8 /* CreateChatroom */ = {
+			isa = PBXGroup;
+			children = (
+				F55ED66B2BAA07E300D715C8 /* CreateChatroomVM.swift */,
+				F55ED6692BAA07D900D715C8 /* CreateChatroomView.swift */,
+				F5BF08CD2CB8F201009DFA87 /* CreateChatroomAddUserSheetView.swift */,
+			);
+			path = CreateChatroom;
+			sourceTree = "<group>";
+		};
+		F5A878542BBDCC1C002EA092 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878532BBDC9DE002EA092 /* dev.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		F5A878552BBDD18F002EA092 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878562BBDD1B6002EA092 /* APIError.swift */,
+				F5A8785D2BBF5AA4002EA092 /* KeychainError.swift */,
+				F53F0D0D2BF9240100F3DBD1 /* SocketError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F5A878582BBEF819002EA092 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F5A878592BBEF844002EA092 /* HashPassword.swift */,
+				F5A8785B2BBF581F002EA092 /* KeychainManager.swift */,
+				F53F0D082BF7A76100F3DBD1 /* SocketClient.swift */,
+				F5C05F5A2C4D8ECD0006897E /* RequestWithAccessToken.swift */,
+				F58D6DE62C556CF9005A35B0 /* DateStringDecoder.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +419,10 @@
 			dependencies = (
 			);
 			name = cheers;
+			packageProductDependencies = (
+				F510F8BC2BAA923E00638472 /* CodeScanner */,
+				F57EC2312BEFF9030041261D /* SocketIO */,
+			);
 			productName = cheers;
 			productReference = F55ED6142BA8916E00D715C8 /* cheers.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +495,10 @@
 				Base,
 			);
 			mainGroup = F55ED60B2BA8916E00D715C8;
+			packageReferences = (
+				F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				F57EC2302BEFF9030041261D /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = F55ED6152BA8916E00D715C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +541,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55ED6522BA8B97800D715C8 /* ChatroomListView.swift in Sources */,
+				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
+				F510F8B12BAA806300638472 /* FriendsListVM.swift in Sources */,
+				F510F8C02BAA941300638472 /* FriendInvitationsVM.swift in Sources */,
+				F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */,
+				F53F0D092BF7A76100F3DBD1 /* SocketClient.swift in Sources */,
+				F55ED65B2BA8CC9C00D715C8 /* ChatroomVM.swift in Sources */,
+				F510F8CD2BAC479200638472 /* Chatroom.swift in Sources */,
+				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
+				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
+				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
+				F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */,
+				F58D6DE72C556CF9005A35B0 /* DateStringDecoder.swift in Sources */,
+				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
+				F5DF38E82C4701E100E957E8 /* UserAvatarWithName.swift in Sources */,
+				F510F8B52BAA853900638472 /* GroupsListVM.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
-				F55ED6182BA8916E00D715C8 /* cheersApp.swift in Sources */,
+				F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */,
+				F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */,
+				F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */,
+				F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */,
+				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
+				F510F8C92BABDEB400638472 /* ChatroomInfo.swift in Sources */,
+				F55ED6562BA8C08000D715C8 /* ChatroomCardView.swift in Sources */,
+				F5A878602BC051B1002EA092 /* URLRequest.swift in Sources */,
+				F55ED64C2BA8A0B300D715C8 /* RegisterView.swift in Sources */,
+				F55ED66C2BAA07E300D715C8 /* CreateChatroomVM.swift in Sources */,
+				F55ED66A2BAA07D900D715C8 /* CreateChatroomView.swift in Sources */,
+				F5A878502BBC5970002EA092 /* NSMutableData.swift in Sources */,
+				F510F8CB2BABE1E900638472 /* Message.swift in Sources */,
+				F510F8C22BAA941C00638472 /* FriendInvitationsView.swift in Sources */,
+				F53F0D0E2BF9240100F3DBD1 /* SocketError.swift in Sources */,
+				F55ED6602BA95B5600D715C8 /* ChatroomSettingsVM.swift in Sources */,
+				F55ED6652BA99CCD00D715C8 /* UserProfileView.swift in Sources */,
+				F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */,
+				F5C05F5B2C4D8ECD0006897E /* RequestWithAccessToken.swift in Sources */,
+				F5A8784E2BBC589D002EA092 /* MultipartFormDataRequest.swift in Sources */,
+				F55ED64F2BA8A2E900D715C8 /* GrayTextField.swift in Sources */,
+				F55ED6472BA898B200D715C8 /* LoginVM.swift in Sources */,
+				F55ED64A2BA8A08F00D715C8 /* RegisterVM.swift in Sources */,
+				F55ED66E2BAA08B500D715C8 /* DismissButton.swift in Sources */,
+				F55ED6542BA8B98100D715C8 /* ChatroomListVM.swift in Sources */,
+				F5BF08CE2CB8F201009DFA87 /* CreateChatroomAddUserSheetView.swift in Sources */,
+				F52514122C4C513000FF2916 /* FriendInvitation.swift in Sources */,
+				F55ED6722BAA239C00D715C8 /* AsyncImageWithDefaultImage.swift in Sources */,
+				F5A8785C2BBF581F002EA092 /* KeychainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55ED6292BA8916F00D715C8 /* cheersTests.swift in Sources */,
+				F55ED6292BA8916F00D715C8 /* CheersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +602,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55ED6352BA8916F00D715C8 /* cheersUITestsLaunchTests.swift in Sources */,
-				F55ED6332BA8916F00D715C8 /* cheersUITests.swift in Sources */,
+				F55ED6352BA8916F00D715C8 /* CheersUITestsLaunchTests.swift in Sources */,
+				F55ED6332BA8916F00D715C8 /* CheersUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +625,7 @@
 /* Begin XCBuildConfiguration section */
 		F55ED6362BA8916F00D715C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5A878532BBDC9DE002EA092 /* dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -425,11 +754,14 @@
 				DEVELOPMENT_TEAM = 5G44JXAR8Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cheers/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan code for adding friends.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,11 +786,14 @@
 				DEVELOPMENT_TEAM = 5G44JXAR8Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = cheers/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan code for adding friends.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +923,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+		F57EC2302BEFF9030041261D /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F510F8BC2BAA923E00638472 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F510F8BB2BAA923E00638472 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		F57EC2312BEFF9030041261D /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F57EC2302BEFF9030041261D /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F55ED60C2BA8916E00D715C8 /* Project object */;
 }
