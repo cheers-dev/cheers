@@ -35,7 +35,11 @@ enum RequestWithAccessToken {
     static func send<T: Decodable>(_ route: String, methodType: Method, data: Data? = nil) async throws -> T {
         let data = try await send(route, methodType: methodType, data: data)
         
-        guard let responseJSON = try? JSONDecoder().decode(T.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
+        
+        guard let responseJSON = try? decoder.decode(T.self, from: data)
         else { throw APIError.invalidData }
         
         return responseJSON
