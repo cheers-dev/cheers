@@ -37,7 +37,7 @@ final class CreateChatroomVM: ObservableObject {
             return false
         }
 
-        guard self.state.members.count < 2 else {
+        guard self.state.members.count > 1 else {
             self.error = APIError.custom("chatroom member should not be empty")
             return false
         }
