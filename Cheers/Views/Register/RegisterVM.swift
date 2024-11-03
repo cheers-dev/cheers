@@ -28,7 +28,8 @@ final class RegisterVM: ObservableObject {
             else { throw APIError.custom("Password validation failed.") }
             
             guard let endpointURLText = Bundle.main.infoDictionary?["GATEWAY_URL"] as? String,
-                  let registerURL = URL(string: endpointURLText.replacing("\\", with: "") + "/user/register")
+                  let registerURL = URL(
+                      string: endpointURLText.replacingOccurrences(of: "\\", with: "") + "/user/register")
             else { throw APIError.invalidURL }
             
             var request = URLRequest(url: registerURL)
@@ -49,7 +50,7 @@ final class RegisterVM: ObservableObject {
             let (data, response) = try await URLSession.shared.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse,
-                  200...299 ~= httpResponse.statusCode
+                  200 ... 299 ~= httpResponse.statusCode
             else { throw APIError.responseError }
             
             guard let loginResponse = try? JSONDecoder().decode(User.LoginResponse.self, from: data)
@@ -63,7 +64,6 @@ final class RegisterVM: ObservableObject {
             try KeychainManager.saveToken(
                 "\(loginResponse.userId)",
                 as: "userId"
-            
             )
             UserDefaults.standard.setValue(true, forKey: "accessTokenFound")
         } catch {
