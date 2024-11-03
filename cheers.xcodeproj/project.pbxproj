@@ -15,6 +15,8 @@
 		F510F8BD2BAA923E00638472 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F510F8BC2BAA923E00638472 /* CodeScanner */; };
 		F510F8C02BAA941300638472 /* FriendInvitationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8BF2BAA941300638472 /* FriendInvitationsVM.swift */; };
 		F510F8C22BAA941C00638472 /* FriendInvitationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C12BAA941C00638472 /* FriendInvitationsView.swift */; };
+		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
+		F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B92BAA8DFF00638472 /* UINavigationController.swift */; };
 		F510F8C52BAAA22E00638472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C42BAAA22E00638472 /* User.swift */; };
 		F510F8C92BABDEB400638472 /* ChatroomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8C82BABDEB400638472 /* ChatroomInfo.swift */; };
 		F510F8CB2BABE1E900638472 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8CA2BABE1E900638472 /* Message.swift */; };

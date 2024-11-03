@@ -30,7 +30,6 @@ struct ContentView: View {
                 birth: Date(),
                 recentFavorite: ["燒肉", "火鍋", "漢堡"]
             ).tabItem { Label("用戶", systemImage: "person.fill") }
-            }
         }
     }
 }
