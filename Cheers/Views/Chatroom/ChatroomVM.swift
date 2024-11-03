@@ -5,11 +5,10 @@
 //  Created by Dong on 2024/3/19.
 //
 
-import SwiftUI
 import SocketIO
+import SwiftUI
 
 final class ChatroomVM: ObservableObject {
-    
     @Published var page = 1
     @Published var loading = true
     @Published var error: Error?
@@ -54,25 +53,8 @@ final class ChatroomVM: ObservableObject {
     
     private func fetchMessage() async -> [Message] {
         do {
-            guard let accessToken = KeychainManager.getToken("accessToken")
-            else { throw KeychainError.itemNotFound }
-            
-            guard let endpointURLText = Bundle.main.infoDictionary?["GATEWAY_URL"] as? String,
-                  let getChatroomListURL = URL(string: endpointURLText.replacing("\\", with: "") + "/chat/messages/\(self.chatroom.id)?page=\(page)")
-            else { throw APIError.invalidURL }
-            
-            var request = URLRequest(url: getChatroomListURL)
-            request.httpMethod = "GET"
-            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-            
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  200...299 ~= httpResponse.statusCode
-            else { throw APIError.responseError }
-            
-            guard let messages = try? JSONDecoder().decode([Message].self, from: data)
-            else { throw APIError.invalidData }
+            let messages: [Message] = try await RequestWithAccessToken
+                .send("chat/messages/\(self.chatroom.id)?page=\(self.page)", methodType: .GET)
             
             return messages.sorted(by: { $0.createdAt! < $1.createdAt! })
         } catch {
@@ -100,7 +82,7 @@ final class ChatroomVM: ObservableObject {
             "content": message
         ]
         
-        emitSendMessageEvent(payload)
+        self.emitSendMessageEvent(payload)
     }
     
     // MARK: - Socket
@@ -114,7 +96,7 @@ final class ChatroomVM: ObservableObject {
             print(String(describing: data.first))
         }
         
-        self.socket.on("chatroomConnected") { data, _ in
+        self.socket.on("chatroomConnected") { _, _ in
             self.loading = false
         }
         
@@ -124,7 +106,7 @@ final class ChatroomVM: ObservableObject {
         }
         
         self.socket.on("message") { data, _ in
-            guard let messageDict = data[0] as? Dictionary<String, String>,
+            guard let messageDict = data[0] as? [String: String],
                   let message = Message.dictionaryToMessage(messageDict)
             else {
                 print("error on messageDict")
@@ -137,11 +119,10 @@ final class ChatroomVM: ObservableObject {
     }
     
     private func connectToChatroom() {
-        self.socket.emit("connectToChatroom", "\(chatroom.id)")
+        self.socket.emit("connectToChatroom", "\(self.chatroom.id)")
     }
     
     private func emitSendMessageEvent(_ payload: [String: Any]) {
         self.socket.emit("sendMessage", payload)
     }
-    
 }
