@@ -18,10 +18,12 @@ struct MultipartFormDataRequest {
     }
     
     func addTextField(_ name: String, value: String) {
+        guard isValidFieldName(name) else { return }
         httpBody.append(textField(name, value: value))
     }
     
     func addDataField(_ name: String, data: Data) {
+        guard isValidFieldName(name) else { return }
         httpBody.append(dataField(name, data: data))
     }
     
@@ -36,6 +38,11 @@ struct MultipartFormDataRequest {
         return request
     }
     
+    private func isValidFieldName(_ fieldName: String) -> Bool {
+        !fieldName.contains(boundary)
+            && !fieldName.contains("\r")
+            && !fieldName.contains("\n")
+    }
     
     private func textField(_ name: String, value: String) -> String {
         var fieldString = "--\(boundary)\r\n"
