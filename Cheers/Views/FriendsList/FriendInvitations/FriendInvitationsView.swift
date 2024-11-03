@@ -23,9 +23,7 @@ struct FriendInvitationsView: View {
         .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden()
         .onReceive(friendInvitationVM.$error) { error in
-            if error != nil {
-                showErrorAlert.toggle()
-            }
+            if error != nil { showErrorAlert.toggle() }
         }
         .alert("Error", isPresented: $showErrorAlert) {
             Button(action: { showErrorAlert.toggle() }) {
@@ -36,9 +34,7 @@ struct FriendInvitationsView: View {
                 Text(String(describing: friendInvitationVM.error!))
             }
         }
-        .sheet(isPresented: $isScanSheetShow) {
-            codeScanner
-        }
+        .sheet(isPresented: $isScanSheetShow) { codeScanner }
         .presentationDetents([.medium])
     }
     
