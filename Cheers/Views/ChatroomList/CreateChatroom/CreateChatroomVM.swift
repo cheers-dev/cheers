@@ -5,6 +5,7 @@
 //  Created by Dong on 2024/3/20.
 //
 
+import Foundation
 import SwiftUI
 
 // MARK: - CreateChatroomState
@@ -49,7 +50,7 @@ final class CreateChatroomVM: ObservableObject {
             )
             let data = try JSONEncoder().encode(body)
 
-            let chatroom: Chatroom = try await RequestWithAccessToken
+            let _: Chatroom = try await RequestWithAccessToken
                 .send("chat/createChatroom", methodType: .POST, data: data)
 
             return true
