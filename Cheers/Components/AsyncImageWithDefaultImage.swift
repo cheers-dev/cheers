@@ -19,9 +19,6 @@ struct AsyncImageWithDefaultImage: View {
                         .aspectRatio(1, contentMode: .fill)
                         .scaledToFill()
 
-                case .empty:
-                    ProgressView()
-
                 default:
                     Image("icon")
                         .resizable()
