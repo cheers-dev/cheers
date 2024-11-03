@@ -29,7 +29,7 @@ struct ChatroomCardView: View {
                 Text(name)
                     .fontWeight(.semibold)
                 Spacer()
-                if time != nil { dynamicTime.font(.footnote) }
+                dynamicTime.font(.footnote)
             }
 
             Text(lastMessage?.content ?? "")
@@ -40,9 +40,13 @@ struct ChatroomCardView: View {
     }
 
     private var dynamicTime: some View {
-        time!.timeIntervalSinceNow < -86400
-            ? Text(time!.formatted(date: .abbreviated, time: .omitted))
-            : Text(time!.formatted(date: .omitted, time: .shortened))
+        Group {
+            if time != nil {
+                time!.timeIntervalSinceNow < -86400
+                    ? Text(time!.formatted(date: .abbreviated, time: .omitted))
+                    : Text(time!.formatted(date: .omitted, time: .shortened))
+            }
+        }
     }
 }
 
