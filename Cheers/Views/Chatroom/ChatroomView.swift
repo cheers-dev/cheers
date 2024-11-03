@@ -120,9 +120,10 @@ struct ChatroomView: View {
                 .clipShape(.capsule)
                 .textFieldStyle(.roundedBorder)
             
-            if !message.isEmpty {
+            if !message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 Button(action: {
-                    chatroomVM.sendMessage(message)
+                    let trimmingMessage = message.trimmingCharacters(in: .whitespacesAndNewlines)
+                    chatroomVM.sendMessage(trimmingMessage)
                     message = ""
                 }) {
                     Image(systemName: "arrow.up.circle.fill")
