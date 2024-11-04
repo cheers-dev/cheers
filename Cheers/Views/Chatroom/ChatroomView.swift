@@ -61,7 +61,9 @@ struct ChatroomView: View {
                     .foregroundStyle($chatroomVM.recommendations.isEmpty ? .black : .yellow)
             }
             .padding(.horizontal, 8)
-            NavigationLink(destination: ChatroomSettingsView()) {
+            NavigationLink(
+                destination: ChatroomSettingsView(viewModel: ChatroomSettingsVM())
+            ) {
                 Image(systemName: "line.horizontal.3")
                     .font(.title3)
                     .foregroundStyle(.black)
