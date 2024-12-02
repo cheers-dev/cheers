@@ -18,6 +18,9 @@
 		35A951DF2CC6357500ED54DF /* RecommendInteractionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A951DE2CC6357500ED54DF /* RecommendInteractionCard.swift */; };
 		35A951E12CC64C4200ED54DF /* UserProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A951E02CC64C4200ED54DF /* UserProfileVM.swift */; };
 		35A951E32CC6F5B900ED54DF /* RecommendationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A951E22CC6F5B900ED54DF /* RecommendationInfo.swift */; };
+		4622CE782CCD7BD40055FC5E /* FoodWorldCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4622CE742CCD7BD30055FC5E /* FoodWorldCupView.swift */; };
+		4622CE792CCD7BD40055FC5E /* TwoChoicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4622CE752CCD7BD30055FC5E /* TwoChoicesView.swift */; };
+		4622CE7A2CCD7BD40055FC5E /* TwoChoicesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4622CE762CCD7BD30055FC5E /* TwoChoicesVM.swift */; };
 		F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8AE2BAA805600638472 /* FriendsListView.swift */; };
 		F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B62BAA855400638472 /* GroupsListView.swift */; };
 		F510F8BA2BAA8DFF00638472 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F510F8B92BAA8DFF00638472 /* UINavigationController.swift */; };
@@ -93,6 +96,9 @@
 		35A951DE2CC6357500ED54DF /* RecommendInteractionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendInteractionCard.swift; sourceTree = "<group>"; };
 		35A951E02CC64C4200ED54DF /* UserProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVM.swift; sourceTree = "<group>"; };
 		35A951E22CC6F5B900ED54DF /* RecommendationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationInfo.swift; sourceTree = "<group>"; };
+		4622CE742CCD7BD30055FC5E /* FoodWorldCupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodWorldCupView.swift; sourceTree = "<group>"; };
+		4622CE752CCD7BD30055FC5E /* TwoChoicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoChoicesView.swift; sourceTree = "<group>"; };
+		4622CE762CCD7BD30055FC5E /* TwoChoicesVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoChoicesVM.swift; sourceTree = "<group>"; };
 		F510F8AE2BAA805600638472 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		F510F8B02BAA806300638472 /* FriendsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListVM.swift; sourceTree = "<group>"; };
 		F510F8B42BAA853900638472 /* GroupsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsList.swift; sourceTree = "<group>"; };
@@ -194,6 +200,16 @@
 				35A951DE2CC6357500ED54DF /* RecommendInteractionCard.swift */,
 			);
 			path = InteractionAnalytics;
+			sourceTree = "<group>";
+		};
+		4622CE772CCD7BD30055FC5E /* FoodWorldCup */ = {
+			isa = PBXGroup;
+			children = (
+				4622CE742CCD7BD30055FC5E /* FoodWorldCupView.swift */,
+				4622CE752CCD7BD30055FC5E /* TwoChoicesView.swift */,
+				4622CE762CCD7BD30055FC5E /* TwoChoicesVM.swift */,
+			);
+			path = FoodWorldCup;
 			sourceTree = "<group>";
 		};
 		F510F8AD2BAA803400638472 /* FriendsList */ = {
@@ -390,6 +406,7 @@
 		F55ED6612BA99B2800D715C8 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
+				4622CE772CCD7BD30055FC5E /* FoodWorldCup */,
 				F55ED6642BA99CCD00D715C8 /* UserProfileView.swift */,
 				35A951E02CC64C4200ED54DF /* UserProfileVM.swift */,
 			);
@@ -576,6 +593,7 @@
 				F55ED6452BA8988A00D715C8 /* LoginView.swift in Sources */,
 				35A951DD2CC6351500ED54DF /* ChatInteractionCard.swift in Sources */,
 				35A951DB2CC62F3D00ED54DF /* RecommendInteractionCardView.swift in Sources */,
+				4622CE7A2CCD7BD40055FC5E /* TwoChoicesVM.swift in Sources */,
 				F5A8785E2BBF5AA4002EA092 /* KeychainError.swift in Sources */,
 				35A951D42CA04E3B00ED54DF /* RatingView.swift in Sources */,
 				35A951DF2CC6357500ED54DF /* RecommendInteractionCard.swift in Sources */,
@@ -586,12 +604,14 @@
 				F55ED6592BA8CC9500D715C8 /* ChatroomView.swift in Sources */,
 				35A951E12CC64C4200ED54DF /* UserProfileVM.swift in Sources */,
 				F55ED65E2BA95B4200D715C8 /* ChatroomSettingsView.swift in Sources */,
+				4622CE792CCD7BD40055FC5E /* TwoChoicesView.swift in Sources */,
 				F510F8C52BAAA22E00638472 /* User.swift in Sources */,
 				F53F0D102C05150200F3DBD1 /* MessageView.swift in Sources */,
 				F510F8B72BAA855400638472 /* GroupsListView.swift in Sources */,
 				F55ED61A2BA8916E00D715C8 /* ContentView.swift in Sources */,
 				F5A878572BBDD1B6002EA092 /* APIError.swift in Sources */,
 				F55ED6672BA9F31D00D715C8 /* NavigationButtonLabel.swift in Sources */,
+				4622CE782CCD7BD40055FC5E /* FoodWorldCupView.swift in Sources */,
 				F510F8AF2BAA805600638472 /* FriendsListView.swift in Sources */,
 				F5A8785A2BBEF844002EA092 /* HashPassword.swift in Sources */,
 				F55ED6182BA8916E00D715C8 /* CheersApp.swift in Sources */,
