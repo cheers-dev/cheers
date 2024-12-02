@@ -8,26 +8,18 @@
 import SwiftUI
 
 struct RecommendationCardView: View {
-    let name: String
-    let category: String
-    let rating: Double
-    let address: String
-    let phone: String
-    let price: String
-    
-    @State private var isLiked: Bool = false
-    @State private var isDisliked: Bool = false
-    
-    let fakedata: Int = 0
+    @ObservedObject var chatroomVM: ChatroomVM
+    @Binding var recommendation: RecommendationCard
+    let userId: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             HStack(spacing: 10){
-                Text(name)
+                Text(recommendation.name)
 //                    .font(.system(size: 30))
                     .font(.title2)
                 
-                Text(category)
+                Text(recommendation.category)
                     .font(.subheadline)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 12)
@@ -37,58 +29,79 @@ struct RecommendationCardView: View {
             }
             
             HStack(alignment: .center) {
-                RatingView(rating: rating)
-                Text(String(format: "%.1f", rating))
+                RatingView(rating: recommendation.rating)
+                Text(String(format: "%.1f", recommendation.rating))
                     .bold()
                     .font(.system(size: 22))
                     .foregroundColor(.orange)
             }
             
-            Text(address)
+            Text(recommendation.address)
             
             HStack{
                 Image(systemName: "phone.fill")
-                Text(phone)
+                Text(recommendation.phone)
                 Text("/")
                 Image(systemName: "dollarsign")
-                Text(price)
+                Text(recommendation.price)
             }
             HStack{
-                Button(action: {
-                    if isDisliked {
-                        isDisliked = false
-                    }
-                    isLiked.toggle()
-                }) {
-                    Image(systemName: isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
-                        .foregroundColor(isLiked ? .yellow : .black)
-                }
-                .padding(.trailing, 5)
-                Text(isLiked ? "\(fakedata + 1)" : "\(fakedata)")
+                likeButton
+                Text("\(recommendation.likes ?? 0)")
                     .padding(.trailing, 20)
-                Button(action: {
-//                    if isLiked {
-//                        isLiked = false
-//                    }
-//                    isDisliked.toggle()
-                }) {
-                    Image(systemName: isDisliked ? "hand.thumbsdown.fill" : "hand.thumbsdown")
-                        .foregroundColor(isDisliked ? .gray : .black)
-                }
-                .padding(.trailing, 5)
-                Text(isDisliked ? "\(fakedata + 1)" : "\(fakedata)")
+//                dislikeButton
+//                Text("\(recommendation.dislikes ?? 0)")
             }
         }
+        .onAppear{
+            // initialize isLiked & isDisliked
+            updateLikeDislikeStatus()
+        }
     }
-}
+    
+    private var likeButton: some View {
+        Button(action: {
+//            recommendation.isDisliked = recommendation.isDisliked ?? false
+            
+            if recommendation.isLiked == true {
+                // cancel like
+                recommendation.isLiked = false
+                recommendation.likes = max((recommendation.likes ?? 0) - 1, 0)
+            } else {
+                // cancel dislike & like
+//                if recommendation.isDisliked == true {
+//                    recommendation.isDisliked = false
+//                    recommendation.dislikes = max((recommendation.dislikes ?? 0) - 1, 0)
+//                }
 
-#Preview {
-    RecommendationCardView(
-        name: "阿里郎",
-        category: "韓國餐廳",
-        rating: 4.6,
-        address: "台北市文山區指南路二段",
-        phone: "02 1234 5678",
-        price: "400-600"
-    )
+                recommendation.isLiked = true
+                recommendation.likes = (recommendation.likes ?? 0) + 1
+            }
+            chatroomVM.changeLikeStatus(restaurant: recommendation.name, likeStatus: recommendation.isLiked ?? false)
+        }) {
+            Image(systemName: recommendation.isLiked == true ? "hand.thumbsup.fill" : "hand.thumbsup")
+                .foregroundColor(recommendation.isLiked == true ? .yellow : .black)
+        }
+        .padding(.trailing, 5)
+    }
+    
+    private var dislikeButton: some View {
+        Button(action: {
+            
+        }) {
+            Image(systemName: recommendation.isDisliked == true ? "hand.thumbsdown.fill" : "hand.thumbsdown")
+                .foregroundColor(recommendation.isDisliked == true ? .gray : .black)
+        }
+        .padding(.trailing, 5)
+    }
+    
+    private func updateLikeDislikeStatus() {
+        if let likeStatus = recommendation.like_status?.first(where: { $0.userId == userId }) {
+            recommendation.isLiked = likeStatus.like
+            recommendation.isDisliked = !likeStatus.like
+        } else {
+            recommendation.isLiked = false
+            recommendation.isDisliked = false
+        }
+    }
 }

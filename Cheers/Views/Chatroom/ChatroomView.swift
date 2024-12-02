@@ -55,7 +55,9 @@ struct ChatroomView: View {
             Text(chatroomVM.chatroom.name)
                 .font(.title3)
             Spacer()
-            NavigationLink(destination: RecommendationListView(recommendations: $chatroomVM.recommendations
+            NavigationLink(destination: RecommendationListView(
+                chatroomVM: chatroomVM,
+                recommendations: $chatroomVM.recommendations
             )){
                 Image(systemName: "lightbulb.fill")
                     .font(.title3)

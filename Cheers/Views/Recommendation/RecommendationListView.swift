@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct RecommendationListView: View {
+    @ObservedObject var chatroomVM: ChatroomVM
     @Binding var recommendations: [RecommendationCard]
+    var userId = KeychainManager.getToken("userId") ?? ""
     
     var body: some View {
         VStack{
@@ -18,20 +20,24 @@ struct RecommendationListView: View {
                 ProgressView("Loading recommendations...")
                 Spacer()
             } else {
-                List(recommendations, id: \.name) { recommendation in
+                List($recommendations, id: \.name) { $recommendation in
                     RecommendationCardView(
-                        name: recommendation.name,
-                        category: recommendation.category,
-                        rating: recommendation.rating,
-                        address: recommendation.address,
-                        phone: recommendation.phone,
-                        price: recommendation.price
+                        chatroomVM: chatroomVM,
+                        recommendation: $recommendation,
+                        userId: userId
                     )
                     .padding(.vertical, 15)
                     .padding(.horizontal, 5)
-                    
                 }
                 .listStyle(PlainListStyle())
+            }
+        }
+        .onAppear {
+            for index in recommendations.indices {
+                if let likeStatus = recommendations[index].like_status?.first(where: { $0.userId == userId }) {
+                    recommendations[index].isLiked = likeStatus.like
+                    recommendations[index].isDisliked = !likeStatus.like
+                }
             }
         }
         .navigationBarBackButtonHidden()
