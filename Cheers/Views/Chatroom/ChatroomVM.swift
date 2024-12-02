@@ -107,6 +107,29 @@ final class ChatroomVM: ObservableObject {
         emitSendMessageEvent(payload)
     }
     
+    func changeLikeStatus(restaurant: String, likeStatus: Bool) {
+        guard let userId = KeychainManager.getToken("userId")
+        else {
+            do {
+                try KeychainManager.deleteToken("accessToken")
+            } catch {
+                self.error = error
+            }
+            
+            self.error = KeychainError.itemNotFound
+            return
+        }
+        
+        let payload: [String: Any] = [
+            "userId": userId,
+            "chatroomId": chatroom.id.uuidString,
+            "restaurant": restaurant,
+            "likeStatus": likeStatus
+        ]
+        
+        emitChangeLikeStatusEvent(payload)
+    }
+    
     // MARK: - Recommendation
     func fetchRecommendations() async -> [RecommendationCard]{
         do {
@@ -134,7 +157,9 @@ final class ChatroomVM: ObservableObject {
             
             return recommendations
         } catch {
-            self.error = error
+            DispatchQueue.main.async {
+                self.error = error
+            }
             return []
         }
     }
@@ -186,7 +211,10 @@ final class ChatroomVM: ObservableObject {
                     let address = dict["address"] as? String,
                     let phone = dict["phone"] as? String,
                     let price = dict["price"] as? String,
-                    let opening_time = dict["opening_time"] as? String
+                    let opening_time = dict["opening_time"] as? String,
+                    let like_status = dict["like_status"] as? [LikeStatus],
+                    let likes = dict["likes"] as? Int,
+                    let dislikes = dict["dislikes"] as? Int
                 else {
                     return nil
                 }
@@ -198,7 +226,10 @@ final class ChatroomVM: ObservableObject {
                     address: address,
                     phone: phone,
                     price: price,
-                    opening_time: opening_time
+                    opening_time: opening_time,
+                    like_status: like_status,
+                    likes: likes,
+                    dislikes: dislikes
                 )
             }
                 
@@ -215,6 +246,10 @@ final class ChatroomVM: ObservableObject {
     
     private func emitSendMessageEvent(_ payload: [String: Any]) {
         self.socket.emit("sendMessage", payload)
+    }
+    
+    private func emitChangeLikeStatusEvent(_ payload: [String: Any]) {
+        self.socket.emit("changeLikeStatus", payload)
     }
     
 }
